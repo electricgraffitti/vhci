@@ -1,20 +1,11 @@
 <div id="footer_top" class="clearfix">
   <div id="footer_top_left">
-    <%= render :partial => "shared/footer/social_links" %>
+    <%#= render :partial => "shared/footer/social_links" %>
   </div>
   <div id="footer_top_right">
     <%= render :partial => "shared/footer/footer_nav" %>
   </div>
 </div>
-<div id="footer_bottom" class="clearfix">
-  <%= link_to raw("A Division of Verisk Health<sup>&reg;</sup>"), "http://www.verisk.com/", :class => "verisk_footer block" %>
-  <div id="footer_tagline">PAY RIGHT, SAVE MONEY.</div>
-  <% if current_user %>
-    <%= link_to "Logout", logout_path, :id => "login_link" %>
-  <% else %>
-    <%= link_to "Login", login_path, :id => "login_link" %>
-  <% end %>
-</div>
-<div id="verisk_footer">
-  <%= link_to(image_tag("footer/verisk_logo.png", :id => "verisk_logo"), "http://www.verisk.com/") %>
+<div id="verisk_footer_logo">
+  <%= link_to "", "http://www.veriskhealth.com", :title => "Verisk Health" %>
 </div>

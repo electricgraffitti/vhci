@@ -1,0 +1,16 @@
+<% content_for :banner do %>
+	<%= image_tag('verisk/banners/home_banner.png') %>
+	<%= link_to "Get a Demo", more_info_path, :class => "button banner_button" %>
+<% end %>
+
+<% content_for :sub_boxes do %>
+ 	<header>Do you have a fraud problem? We have your solution?</header>
+ 	<%= render :partial => 'shared/sub_boxes/sub_boxes' %>
+ 	<div id="full_quote">
+	  <div class="quote blue">
+	    <span class="row_1">"We have experienced positive changes in provider</span>
+	    <span class="row_3">billing habits resulting in significant savings."</span>
+	  </div>
+	  <div class="quote_signature">- Marry Alice Garcia, BA, CPC  Medicaid MCO</div>
+	</div>
+<% end %>

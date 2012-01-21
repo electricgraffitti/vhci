@@ -1,0 +1,135 @@
+HCI NOTES:
+hcinsight.com will point to new site but new site url is verisk based  don't have url yet will get from darin or cory
+top nucleus login goes to nuclues log in
+
+
+About Us.
+All content down to Joel image and timeline is good
+timeline is good
+h2 under timeline is good
+one addition employee on sidebar
+content under darin is good
+careers block is good and will link to iso careers page like careers footer link
+
+
+
+
+Home.
+Banner is not final yet, just place holder but the demo button is consistent throughout site.
+sub box header is good
+Sub boxes are good to go
+quote is good to go
+get a demo links to more info page
+be in your element link to nucleus page
+meet nuclues go's to nucleus
+more info to more info
+
+
+
+
+
+MoreInfo.
+banner will change
+button good
+form fields are good 
+route form to info@hcinsght.com
+whole contact side is good but para is placeholder
+cost reduction does not go in and nuclues demo and graphic goes DO NOT PUT IN
+Address are good except:  
+ST. George gets changed to North Carolina
+FORM IN ACTON
+
+
+
+Nucleus.
+except banner everything is good to go
+
+
+
+
+
+Svc BillReview.
+All three services page change:  
+All banners will change button is good
+Realtimes claims header will change
+paragraph will change
+quote will change
+monitor is good, not sure which page gets existing screenshot, screenshot will change for other two
+the problem box:
+header is good
+copy is good
+graphs update years/content
+the solution box:
+solution header is good
+copy should be good for now
+Brochures & resources header is good on both sides
+nuclues platform to nucleus page and   demo goes to more info
+4 pdf's will be provided by mica
+
+
+
+
+Svc ClaimsEditing.
+All three services page change:  
+All banners will change button is good
+Realtimes claims header will change
+paragraph will change
+quote will change
+monitor is good, not sure which page gets existing screenshot, screenshot will change for other two
+the problem box:
+header is good
+copy is good
+graphs update years/content
+the solution box:
+solution header is good
+copy should be good for now
+Brochures & resources header is good on both sides
+nuclues platform to nucleus page and   demo goes to more info
+4 pdf's will be provided by mica
+
+
+
+
+
+
+Svc FraudPrevention.
+All three services page change:  
+All banners will change button is good
+Realtimes claims header will change
+paragraph will change
+quote will change
+monitor is good, not sure which page gets existing screenshot, screenshot will change for other two
+the problem box:
+header is good
+copy is good
+graphs update years/content
+the solution box:
+solution header is good
+copy should be good for now
+Brochures & resources header is good on both sides
+nuclues platform to nucleus page and   demo goes to more info
+4 pdf's will be provided by mica
+
+
+
+FOOTER INFO:
+
+careers link goes straight to (mica needs ISO to update look of that page):    https://hcinsight-isofamily.icims.com/jobs/search?ss=1&searchLocation=&searchCategory=
+
+webex page links to (mica needs webex to update that page look and feel):  https://hcinsight.webex.com/cmp0306lb/webcomponents/widget/detect.do?siteurl=hcinsight&LID=1&RID=2&TID=11&rnd=3303482541&DT=-480&DL=en-US&isDetected=true&backUrl=%2Fmw0306lb%2Fmywebex%2Fdefault.do%3Fsiteurl%3Dhcinsight
+
+footer VH logo needs to ink to verisk website.
+
+ourb rochure footer link to "fraud prevention service page"
+
+
+
+
+
+
+
+
+
+
+
+

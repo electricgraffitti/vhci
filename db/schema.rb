@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -39,10 +40,10 @@ ActiveRecord::Schema.define(:version => 20110207180532) do
     t.text     "description"
     t.integer  "article_type_id"
     t.string   "keywords"
-    t.text     "meta_description"
     t.string   "permalink"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "meta_description"
     t.boolean  "third_party"
     t.string   "third_party_url"
   end
@@ -150,17 +151,17 @@ ActiveRecord::Schema.define(:version => 20110207180532) do
     t.string   "title"
     t.text     "description"
     t.integer  "document_type_id"
-    t.string   "download_link"
-    t.string   "issuu_url"
-    t.text     "meta_description"
     t.string   "keywords"
     t.string   "permalink"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "meta_description"
+    t.string   "issuu_url"
     t.boolean  "brochure"
     t.integer  "brochure_order"
     t.integer  "service_id"
     t.text     "brochure_sub_heading"
+    t.string   "download_link"
   end
 
   add_index "documents", ["document_type_id"], :name => "index_documents_on_document_type_id"
@@ -174,8 +175,6 @@ ActiveRecord::Schema.define(:version => 20110207180532) do
     t.string   "username"
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "email"
-    t.datetime "last_login_at"
     t.integer  "department_id"
     t.string   "ext"
     t.string   "home_phone"
@@ -184,9 +183,11 @@ ActiveRecord::Schema.define(:version => 20110207180532) do
     t.integer  "role_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "email"
     t.string   "crypted_password"
     t.string   "password_salt"
     t.string   "persistence_token"
+    t.datetime "last_login_at"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
@@ -199,11 +200,11 @@ ActiveRecord::Schema.define(:version => 20110207180532) do
   create_table "events", :force => true do |t|
     t.string   "title"
     t.text     "description"
-    t.text     "meta_description"
     t.string   "keywords"
     t.string   "permalink"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "meta_description"
     t.date     "start_date"
     t.date     "end_date"
     t.string   "website_url"
@@ -232,11 +233,11 @@ ActiveRecord::Schema.define(:version => 20110207180532) do
     t.string   "title"
     t.text     "description"
     t.string   "link_url"
-    t.text     "meta_description"
     t.string   "keywords"
     t.string   "permalink"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "meta_description"
   end
 
   create_table "newsletter_subscriptions", :force => true do |t|
@@ -263,10 +264,10 @@ ActiveRecord::Schema.define(:version => 20110207180532) do
   end
 
   create_table "priorities", :force => true do |t|
-    t.string   "priority_name"
     t.string   "priority_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "priority_name"
   end
 
   create_table "quotes", :force => true do |t|
@@ -304,20 +305,20 @@ ActiveRecord::Schema.define(:version => 20110207180532) do
 
   create_table "services", :force => true do |t|
     t.string   "title"
-    t.string   "acronym"
     t.text     "description"
-    t.string   "permalink"
-    t.text     "meta_description"
-    t.string   "keywords"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "keywords"
+    t.string   "permalink"
+    t.text     "meta_description"
     t.string   "quote"
     t.text     "problem"
     t.text     "solution"
+    t.string   "acronym"
     t.string   "landing_link"
     t.integer  "claim_type_id"
   end
@@ -424,10 +425,10 @@ ActiveRecord::Schema.define(:version => 20110207180532) do
   add_index "ticket_assignments", ["ticket_id"], :name => "index_ticket_assignments_on_ticket_id"
 
   create_table "ticket_statuses", :force => true do |t|
-    t.string   "status_name"
     t.string   "status_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "status_name"
   end
 
   create_table "ticket_updates", :force => true do |t|
@@ -502,7 +503,6 @@ ActiveRecord::Schema.define(:version => 20110207180532) do
   create_table "videos", :force => true do |t|
     t.string   "title"
     t.text     "description"
-    t.string   "permalink"
     t.integer  "video_type_id"
     t.boolean  "third_party"
     t.string   "third_party_url"
@@ -512,6 +512,7 @@ ActiveRecord::Schema.define(:version => 20110207180532) do
     t.string   "video_content_type"
     t.integer  "video_file_size"
     t.datetime "video_updated_at"
+    t.string   "permalink"
     t.string   "video_thumb_file_name"
     t.string   "video_thumb_content_type"
     t.integer  "video_thumb_file_size"

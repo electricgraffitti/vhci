@@ -641,7 +641,7 @@ $(document).ready(function() {
   flash.injectFlashBox();
 	flash.setFlash();
   app.ieButtonFix();
-  app.mainNavHovers();
+  //app.mainNavHovers();
   app.setCurrentLink();
 });
 

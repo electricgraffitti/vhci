@@ -1,44 +1,14 @@
 Hci3::Application.routes.draw do
   
-  resources :quotes
+  # Verisk Pages
+  match 'payment_accuracy' => 'payment_accuracy#home', :as => :home
+  match 'claims_editing' => 'payment_accuracy#claim_editing', :as => :claim_editing
+  match 'fraud_prevention' => 'payment_accuracy#fraud_prevention', :as => :fraud_prevention
+  match 'bill_review' => 'payment_accuracy#bill_review', :as => :bill_review
+  match 'about_us' => 'payment_accuracy#about_us', :as => :about_us
+  match 'nucleus' => 'payment_accuracy#nucleus', :as => :nucleus
+  match 'more_info' => 'payment_accuracy#more_info', :as => :more_info
 
-  root :to => "pages#index"
-  
-  resources :friend_invites
-  resources :tutorial_videos
-  resources :students
-  resources :student_sessions
-  resources :advertisements
-  resources :goal_types
-  resources :claim_types
-  resources :business_type
-  resources :service_inquiries
-  resources :videos
-  resources :free_trials
-  resources :benefits
-  resources :newsletter_subscriptions
-  resources :tickets, :has_many => :ticket_assets
-  resources :ticket_updates
-  resources :ticket_statuses
-  resources :priorities
-  resources :departments
-  resources :roles
-  resources :employees
-  resources :employee_sessions
-  resources :document_types
-  resources :coverflows
-  resources :documents, :has_many => :assets
-  resources :links, :has_many => :assets
-  resources :article_types
-  resources :articles, :has_many => :assets
-  resources :events, :has_many => :assets
-  resources :services, :has_many => :assets
-  resources :users
-  resources :user_sessions
-  resources :uni_resources
-  resources :banners
-  resources :claim_savers
-  
   # Mail Route Paths
   match 'contacts_mailer' => "contacts#contacts_mailer", :as => :contact_mailer
   
@@ -60,7 +30,7 @@ Hci3::Application.routes.draw do
   match "thank-you-for-inviting-a-friend" => "landing_pages#invite_thank_you", :as => :invite_thank_you
   match "upload-issuu" => "issuu_uploads#index", :as => :issuu_upload
   match "healthcare-insight-document" => 'issuu_uploads#show', :as => :issue
-  match "nucleus" => "pages#nucleus", :as => :nucleus
+  # match "nucleus" => "pages#nucleus", :as => :nucleus
   match "healthcare-insight-markets" => "pages#markets", :as => :markets
   match "healthcare-insight-resources" => "pages#resources", :as => :res
   match "healthcare-insight-press-kit" => "pages#press_kit", :as => :press_kit
@@ -107,5 +77,43 @@ Hci3::Application.routes.draw do
   
   # Ajax Routes
   
+  resources :quotes  
+  resources :friend_invites
+  resources :tutorial_videos
+  resources :students
+  resources :student_sessions
+  resources :advertisements
+  resources :goal_types
+  resources :claim_types
+  resources :business_type
+  resources :service_inquiries
+  resources :videos
+  resources :free_trials
+  resources :benefits
+  resources :newsletter_subscriptions
+  resources :tickets, :has_many => :ticket_assets
+  resources :ticket_updates
+  resources :ticket_statuses
+  resources :priorities
+  resources :departments
+  resources :roles
+  resources :employees
+  resources :employee_sessions
+  resources :document_types
+  resources :coverflows
+  resources :documents, :has_many => :assets
+  resources :links, :has_many => :assets
+  resources :article_types
+  resources :articles, :has_many => :assets
+  resources :events, :has_many => :assets
+  resources :services, :has_many => :assets
+  resources :users
+  resources :user_sessions
+  resources :uni_resources
+  resources :banners
+  resources :claim_savers
+  
+  # Default Path
+  root :to => "payment_accuracy#home"
 
 end
