@@ -294,6 +294,7 @@ header #top_links li.divider a {
 }
 #service_links section header {
   font-size: 28px;
+  height: 40px;
 }
 #service_links section ul, #service_links section ul li {
   position: relative;
@@ -1045,7 +1046,7 @@ a.casetracker-insight_index_wrap {
 }
 #service_mid_section .service_mid_section_image {
   float: left;
-  height: 300px;
+  height: 325px;
   position: relative;
   width: 345px;
 }
@@ -1060,7 +1061,7 @@ a.casetracker-insight_index_wrap {
   background: transparent url(../images/service_pages/service_mid_bg_sprite.png) left -1252px no-repeat;
 }
 #service_mid_section.dci .service_mid_section_image {
-  background: transparent url(../images/service_pages/service_mid_bg_sprite.png) left -940px no-repeat;
+  background: transparent url(../images/verisk/claims_service_page_monitor.png) 0px 0px no-repeat;
 }
 #service_mid_section.oci .service_mid_section_image {
   background: transparent url(../images/service_pages/service_mid_bg_sprite.png) left -626px no-repeat;
@@ -2304,6 +2305,22 @@ footer {
   text-align: center;
   display: block;
   padding: 3px 10px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+}
+#service_links .button {
+  position: relative;
+  float: left;
+  margin-right: 10px;
+  width: 180px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  text-decoration: none;
+  text-align: left;
+  padding: 14px 10px 0px;
+  height: 30px;
+  font-family: "GothamXNarrow-Thin", Helvetica, Arial, sans-serif;
 }
 /* f59b36 */
 a.button:hover {
