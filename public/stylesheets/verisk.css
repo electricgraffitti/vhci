@@ -172,8 +172,11 @@ h4 { font-weight: 500; font-size: 13px; line-height: 18px; }
 .blue {
   color: #0078ae;
 }
-
-
+.dci_light_bg{background: #439ec6;}
+.dci_dark_bg {background: #18759c;}
+#service_mid_section.dci .service_mid_section_image {
+  background: transparent url(../images/service_pages/service_mid_bg_sprite.png) left -940px no-repeat;
+}
 /*************************************************************************************************************************************/
 /******************************************************************************************************* ERRORS **********************/
 #flash{position:absolute;text-align:center;color:#fff;left:38%;padding:2px;top:5px;width:385px;background:#00853f;font-size:175%;z-index:100;display:none;}
@@ -272,6 +275,29 @@ header #top_links li.divider a {
   float:left;
   width: 930px;
   padding: 0px 15px;
+}
+#service_links {
+  position: relative;
+  float: left;
+  width: 940px;
+  height: 260px;
+}
+#service_links section {
+  position: relative;
+  float:left;
+  width:429px;
+  padding: 0px 20px;
+  margin: 20px 0px;
+}
+#service_links section.last {
+  border-left: 1px solid #616161;
+}
+#service_links section header {
+  font-size: 28px;
+}
+#service_links section ul, #service_links section ul li {
+  position: relative;
+  float: left;
 }
 .gray_box, .gray_box.thin {
   position: relative;
@@ -1012,7 +1038,7 @@ a.casetracker-insight_index_wrap {
 #service_mid_section {
   position: relative;
   float: left;
-  width: 960px;
+  width: 940px;
   margin-top: 10px;
   padding-top: 10px;
   padding-bottom: 20px;
@@ -1053,18 +1079,20 @@ a.casetracker-insight_index_wrap {
   width: 550px;
 }
 .service_mid_section_content .title {
-  line-height: 28px;
+  line-height: 56px;
+  font-size: 38px;
 }
 .service_mid_section_content p {
   line-height: 20px;
   padding-right: 30px;
   margin-bottom: 20px;
+  font-family: Helvetica, Arial, sans-serif;
 }
 #problem_solution_boxes {
   position: relative;
   float:left;
-  width: 930px;
-  padding: 15px;
+  width: 940px;
+  padding: 15px 0px;
 }
 .pro_sol_boxes {
   position: relative;
@@ -1086,6 +1114,7 @@ a.casetracker-insight_index_wrap {
   padding: 0 15px 15px;
   width: 330px;
   float:left;
+  font-family: Helvetica, Arial, sans-serif;
 }
 .graph_box {
   bottom: 5px;
@@ -1114,28 +1143,26 @@ a.casetracker-insight_index_wrap {
 }
 .solution_box {
   border: 1px solid #DEDEDE;
-  width: 551px;
+  width: 561px;
 }
 .solution_bene {
   padding: 14px 0 0 19px;
   width: 250px;
   float:left;
+  font-family: Helvetica, Arial, sans-serif;
 }
 .solution_bene h3 {
   font-weight: 300;
   font-size: 14px;
 }
 .solution_bene p {
-  font-size: 12px;
+  font-size: 13px;
 }
 .pci_sol_box_bg {
   background: url(../images/service_pages/sol_box_bg.jpg) right -2085px no-repeat;
 }
 .fci_sol_box_bg {
   background: url(../images/service_pages/sol_box_bg.jpg) right -1590px no-repeat;
-}
-.dci_sol_box_bg {
-  background: url(../images/service_pages/sol_box_bg.jpg) right -1184px no-repeat;
 }
 .oci_sol_box_bg {
   background: url(../images/service_pages/sol_box_bg.jpg) right -776px no-repeat;
@@ -1149,7 +1176,7 @@ a.casetracker-insight_index_wrap {
 .top_stripe, .bottom_stripe {
   float: left;
   height: 10px;
-  width: 930px;
+  width: 940px;
 }
 .bottom_stripe {
   height: 50px;
@@ -1165,9 +1192,6 @@ a.casetracker-insight_index_wrap {
 }
 .stripe_icon.fci {
   background: url(../images/service_pages/service_stripe_icons.png) 0px -100px no-repeat;
-}
-.stripe_icon.dci {
-  background: url(../images/service_pages/service_stripe_icons.png) 0px -50px no-repeat;
 }
 .stripe_icon.oci {
   background: url(../images/service_pages/service_stripe_icons.png) 0px -150px no-repeat;
@@ -2149,7 +2173,7 @@ h2.thick_thin_header span {
 }
 
 #small_quote .quote {
-  width: 417px;
+  width: 515px;
   font-size: 20px;
 }
 .quote b {
@@ -2165,6 +2189,12 @@ h2.thick_thin_header span {
   display: block;
   width: 100%;
   font-size: 36px;
+}
+#small_quote .quote span {
+  font-size: 32px;
+}
+#small_quote .quote  {
+  width: 515px;
 }
 .quote span.row_1 {
   text-align:left;
