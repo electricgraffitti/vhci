@@ -1,0 +1,19 @@
+<h1>Editing role</h1>
+
+<%= form_for(@role) do |f| %>
+  <%= render :partial => "shared/error_block", :locals => {:object => f} %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :role_type %><br />
+    <%= f.text_field :role_type %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @role %> |
+<%= link_to 'Back', roles_path %>

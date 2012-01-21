@@ -1,0 +1,38 @@
+<% page_title("| Fraud Waste and Abuse Saas Solution") %>
+<% meta_description("HealthCare Insight provides private and public sector claims payors with a comprehensive suite of clinically validated fraud prevention services") %> 
+
+<% content_for :banner do %>
+  <%= render :partial => 'shared/banners/index_banners' %>
+<% end %>
+
+<% content_for :sub_boxes do %>
+  <div id="index">
+    <h2 class="thick_thin_header"><span>DO YOU HAVE A FRAUD</span> Problem?</h2>
+    <h2 class="thick_thin_header"><span>WE HAVE YOUR</span> Solution.</h2>
+    <%= render :partial => 'shared/sub_boxes/sub_boxes' %>
+    <%= render :partial => "shared/quotes/full_quote", :locals => {:quote => @quote} %>
+  </div>
+<% end %>
+
+<% content_for :overlays do %>
+  <div id="video_div" class="overlay">
+    <div class="close"></div>
+    <div id="player"></div>
+  </div>
+<% end %>
+
+<% content_for :javascripts do %>
+  <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+      app.hideElement($(".index_banner_nav .first"));
+      banners.indexBanners();
+      videos.indexBannerVideos();
+    });
+  </script>
+<% end %>
+
+<% content_for :crazy_egg do %>
+  <script type="text/javascript">
+  document.write(unescape('%3Cscript type="text/javascript" src="'+document.location.protocol+'//dnn506yrbagrg.cloudfront.net/pages/scripts/0011/3971.js"%3E%3C%2Fscript%3E'))
+  </script>
+<% end %>

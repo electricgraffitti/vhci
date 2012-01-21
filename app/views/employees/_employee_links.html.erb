@@ -1,0 +1,9 @@
+<% if employee_admin? %>
+  <%= link_to 'Admin Edit', edit_employee_path(employee) %> | <%= link_to 'Delete Employee', employee, :confirm => 'Are you sure?', :method => :delete %> |
+<% end %>
+<% if employee == current_employee %>
+<%= link_to "Edit My Profile", "#", :id => "employee_profile_slide_link" %>
+<div id="employee_profile_slide" style="display:none">
+  <%= render :partial => 'employees/minimum_form', :locals => {:employee => employee} %>
+</div>
+<% end %>

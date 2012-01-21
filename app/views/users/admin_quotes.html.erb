@@ -1,0 +1,37 @@
+<h2 class="title title_color">HCI Quotes</h2>
+  <table id="quotes_table" class="display">
+    <thead>  
+      <tr>
+        <th>Page</th>
+        <th>Author</th>
+        <th>View</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @quotes.each do |q| %>
+        <tr>
+          <td><%=h q.page.page_name %></td>
+          <td><%=h q.author %></td>
+          <td><%= link_to 'View', quote_path(q) %></td>
+          <td><%= link_to 'Update', edit_quote_path(q) %></td>
+          <td><%= link_to 'Delete', q, :confirm => 'Are you sure?', :method => :delete %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to 'New Quote', new_quote_path %>
+
+  <% content_for :javascripts do %>
+    <script type="text/javascript" charset="utf-8">
+      $(document).ready(function() {
+        admin.employeeEdit();
+        admin.datePickers();
+        admin.dataTables();
+        admin.thirdPartyUrlToggle();
+        admin.multipleUploads();
+      });
+    </script>
+  <% end %>

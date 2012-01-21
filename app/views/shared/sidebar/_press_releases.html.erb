@@ -1,0 +1,8 @@
+<div class="sidebar">
+   <h2 class="green">HCI Press Releases</h3>
+   <div class="gray_box sidebar_box">
+     <% objects.each do |obj| %>
+       <%= render :partial => 'shared/articles/article_list', :locals => {:obj => obj} %>
+     <% end %>
+   </div>
+</div>

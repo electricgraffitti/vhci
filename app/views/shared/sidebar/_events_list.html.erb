@@ -1,0 +1,8 @@
+<% unless objects.blank? %>
+<h3 class="orange">Upcoming Events</h3>
+<div class="service_wrap sub_news_box event_box">
+  <% objects.each do |obj| %>
+    <%= render :partial => 'events/index_event', :locals => {:obj => obj} %>
+  <% end %>
+</div>
+<% end %>

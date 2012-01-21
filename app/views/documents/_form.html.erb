@@ -1,0 +1,93 @@
+<%= form_for(@document, :html => {:multipart => true }) do |f| %>
+  <%= render :partial => "shared/error_block", :locals => {:object => @document} %>
+
+<div class="grid_5">
+  <h3>Document Content</h3>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description, :rows => 5, :cols => 28 %>
+  </p>
+  <p>
+    <%= f.label "Select Document Type" %><br />
+    <%= collection_select(:document, :document_type_id, @document_types, :id, :document_type) %>
+  </p>
+  <p>
+    <%= f.label :issuu_url %><br />
+    <%= f.text_field :issuu_url %>
+  </p>
+  <p>
+    <%= f.label :download_link, "Pardot Download Link" %><br />
+    <%= f.text_field :download_link %>
+  </p>
+  <p>
+    <% for asset in @document.assets %>
+    <%= fields_for "document[attachments][]", asset do |asset_form|%>
+    <%= asset_form.label "Upload Documents" %><br />
+    <%= asset_form.file_field :attachment, :size => 16 %>
+    <% end %>
+    <% end %>
+  </p>
+  <p>
+    <%= f.fields_for :coverflows do |cover_form|%>
+    <%= cover_form.label "Add Cover Flow" %><br />
+    <%= cover_form.file_field :cover, :size => 16 %>
+    <% end %>
+  </p>
+  <p>
+    <%= f.check_box :brochure %>
+    <%= f.label :brochure, "Is Brochure?" %>
+  </p>
+  <p>
+    <%= f.label :brochure_order %><br />
+    <%= f.text_field :brochure_order %>
+  </p>
+  <p>
+    <%= f.label :brochure_sub_heading, "Sub Heading" %><br />
+    <%= f.text_area :brochure_sub_heading, :rows => 5, :cols => 28 %>
+  </p>
+  <p>
+    <%= f.label "Service for Brochure" %><br />
+    <%= collection_select(:document, :service_id, Service.all, :id, :title) %>
+  </p>
+</div>
+<div class="grid_5">
+  <h3>Document SEO</h3>
+  <p>
+    <%= f.label :meta_description %><br />
+    <%= f.text_area :meta_description, :rows => 5, :cols => 28 %>
+  </p>
+  <p>
+    <%= f.label :keywords %><br />
+    <%= f.text_field :keywords %>
+  </p>
+  <p>
+    <%= f.label :permalink %><br />
+    <%= f.text_field :permalink %>
+  </p>
+</div>
+<div class="grid_5">
+  <h3>Document Dependencies</h3>
+  <p>
+    <%= link_to "Create New Doc Type", new_document_type_path %>
+  </p>
+  <p>
+    <h4>Document Types Available</h4>
+    <ul>
+      <% for document_type in @document_types %>
+      <li><%= document_type.document_type %> | Ext: <%= document_type.document_extension %></li>
+      <% end %>
+    </ul>
+  </p>
+</div>
+<div class="clear"></div>
+<div class="grid_5"
+  <p>
+    <%= f.submit 'Submit' %>
+    <%= link_to "Back", request.env["HTTP_REFERER"]%>
+  </p>
+</div>
+<% end %>

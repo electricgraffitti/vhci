@@ -1,0 +1,43 @@
+<h2 class="title title_color">Banners</h2>
+  <table id="services_table" class="display">
+  <thead>  
+    <tr>
+      <th>Headline</th>
+      <th>Image</th>
+      <th>Current State</th>
+      <th>View Banner</th>
+      <th>Edit Banner</th>
+      <th>Delete Banner</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @banners.each do |b| %>
+      <tr>
+        <td><%=h b.headline %></td>
+        <td><%= b.banner_file_name %></td>
+        <% if b.active_banner %>
+          <td><span class="active">Active</span></td>
+        <% else %>
+          <td><span class="inactive">Inactive</span></td>
+        <% end %>
+        <td><%= link_to 'View Banner', banner_path(b) %></td>
+        <td><%= link_to 'Update Banner', edit_banner_path(b) %></td>
+        <td><%= link_to 'Delete Banner', b, :confirm => 'Are you sure?', :method => :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'New Banner', new_banner_path %>
+
+<% content_for :javascripts do %>
+  <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+      admin.employeeEdit();
+      admin.datePickers();
+      admin.dataTables();
+      admin.thirdPartyUrlToggle();
+      admin.multipleUploads();
+    });
+  </script>
+<% end %>

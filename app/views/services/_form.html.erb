@@ -1,0 +1,69 @@
+<%= form_for(@service, :html => {:multipart => true}) do |f| %>
+  <%= render :partial => "shared/error_block", :locals => {:object => @service} %>
+  <div class="grid_5">
+    <h4>Service Content</h4>
+    <p>
+      <%= f.label :title %><br />
+      <%= f.text_field :title %>
+    </p>
+    <p>
+      <%= f.label :description %><br />
+      <%= f.text_area :description, :rows => 5, :cols => 29 %>
+    </p>
+    <p>
+      <%= f.label :quote %><br />
+      <%= f.text_area :quote, :rows => 5, :cols => 29 %>
+    </p>
+    <p>
+      <%= f.label :problem %><br />
+      <%= f.text_area :problem, :rows => 5, :cols => 29 %>
+    </p>
+    <p>
+      <%= f.label :solution %><br />
+      <%= f.text_area :solution, :rows => 5, :cols => 29 %>
+    </p>
+    <p>
+      <%= f.label :landing_link, "Free Trial Landing Page URL" %><br />
+      <%= f.text_field :landing_link %>
+    </p>
+    <p>
+      <%= f.label :claim_type_id, "Claim Type" %><br />
+      <%= collection_select(:service, :claim_type_id, ClaimType.all, :id, :claim_type) %>
+    </p>
+    <p>
+      <%= f.label :avatar, "Avatar" %><br/>
+      <%= f.file_field :avatar, :size => 16 %>
+    </p>
+    <p>
+      <%= f.fields_for :coverflows do |cover_form|%>
+      <%= cover_form.label "Add Cover Flow" %><br />
+      <%= cover_form.file_field :cover, :size => 16 %>
+      <% end %>
+    </p>
+  </div>
+  <%= render :partial => "service_bullet_form", :locals => {:f => f} %>
+  <%= render :partial => "case_study_form", :locals => {:f => f} %>
+  <%= render :partial => "brochure_form", :locals => {:f => f} %>
+  <div class="grid_5">
+    <h4>Service SEO</h4>
+    <p>
+      <%= f.label :meta_description %><br />
+      <%= f.text_area :meta_description, :rows => 5, :cols => 28 %>
+    </p>
+    <p>
+      <%= f.label :permalink %><br />
+      <%= f.text_field :permalink %>
+    </p>
+    <p>
+      <%= f.label :keywords %><br />
+      <%= f.text_field :keywords %>
+    </p>
+  </div>
+  <div class="clear"></div>
+  <div class="grid_5"
+    <p>
+      <%= f.submit 'Submit'%>
+      <%= link_to "Back", request.env["HTTP_REFERER"]%>
+    </p>
+  </div>
+<% end %>

@@ -1,0 +1,54 @@
+<div id="slider" class="nucleus_banner">
+  <div class="scroll">
+    <div class="scrollContainer">
+      
+      <div id="panel1" class="panel">
+        
+        <%= image_tag("/images/banners/contact_banner.png") %>
+        
+        <div class="hidden">
+          <h2>Let your voice Be Heard</h2>
+        </div>
+        
+        <div class="big_banner_content_wrap">
+          <h2>We Want To Hear From You.</h2>
+          <p>
+            Feel free to email us with your ideas, thoughts and questions. If you'd like to speak with one of our sales team experts, please indicate your request in the &quot;Comments&quot; section to the right or call us at (877) 619-5557.
+          </p>
+        </div>
+        
+        <div class="big_banner_form_wrap">
+          <% form_tag("http://www2.hcinsight.com/l/1492/2009-12-21/G1YG9", :method => "post", :id => "contact_form") do %>
+            <div class="field">
+              <%= label :contact, :contact_first_name, "First Name *" %><br />
+              <%= text_field :contact, :contact_first_name, :name => "contact_us_first_name" %>
+            </div>
+            <div class="field">
+              <%= label :contact, :contact_last_name, "Last Name *" %><br />
+              <%= text_field :contact, :contact_last_name, :name => "contact_us_last_name" %>
+            </div>
+            <div class="field">
+              <%= label :contact, :email, "Email Address *" %><br />
+              <%= text_field :contact, :email, :name => "contact_us_email" %>
+            </div>
+            <div class="field">
+              <%= label :contact, :business_name, "Company *" %><br />
+              <%= text_field :contact, :business_name, :name => "contact_us_business_name" %>
+            </div>
+            <div class="field">
+              <%= label :contact, :comment, "Comments" %><br />
+              <%= text_area :contact, :comment, :name => "contact_us_comment", :rows => 3, :cols => 28   %>
+            </div>
+            <div class="field">
+              <%= label :contact, :position, "Position *" %><br />
+              <%= text_field :contact, :position, :name => "contact_us_position" %>
+            </div>
+            <%= submit_tag 'Submit', :class => "search_btn_green", :title => "Submit Your Message to HealthCare Insight" %>
+          <% end %>
+        </div>
+        
+      </div>
+      
+   </div>
+  </div>
+</div>

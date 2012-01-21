@@ -1,0 +1,79 @@
+<%= form_for(banner, :html => {:multipart => true}) do |f| %>
+  <%= render :partial => "shared/error_block", :locals => {:object => banner} %>
+
+  <p>
+    <%= f.label :headline %><br />
+    <%= f.text_field :headline %>
+  </p>
+  <p>
+    <%= f.label :content %><br />
+    <%= f.text_area :content, :rows => 5, :cols => 28 %>
+  </p>
+  <p>
+    <%= f.label :banner, "Banner Image Upload 928x483" %><br />
+    <%= f.file_field :banner %>
+  </p>
+  <p>
+    <%= f.label :secondary_banners, "Has secondary banners" %><br />
+    <%= f.check_box :secondary_banners %>
+  </p>
+  <p>
+    <%= f.label :active_banner, "Active Banner" %><br />
+    <%= f.check_box :active_banner %>
+  </p>
+<div class="grid_12 alpha omega">  <%= f.label :button_color, "Button Color" %><br />
+  <div class="banner_form_radios">
+    <p>
+      <%= f.radio_button :button_color, 'none' %><b>None</b>
+    </p>
+    <p>
+      <%= f.radio_button :button_color, 'green' %><b>Green</b>
+    </p>
+    <p>
+      <%= f.radio_button :button_color, 'pink' %><b>Pink</b>
+    </p>
+    <p>
+      <%= f.radio_button :button_color, 'orange' %><b>Orange</b>
+    </p>
+    <p>
+      <%= f.radio_button :button_color, 'yellow' %><b>Yellow</b>
+    </p>
+    <p>
+      <%= f.radio_button :button_color, 'dark_blue' %><b>Dark Blue</b>
+    </p>
+    <p>
+      <%= f.radio_button :button_color, 'purple' %><b>Purple</b>
+    </p>
+    <p>
+      <%= f.radio_button :button_color, 'light_blue' %><b>Light Blue</b>
+    </p>
+    <p>
+      <%= f.radio_button :button_color, 'black' %><b>Black</b>
+    </p>
+    <p>
+      <%= f.radio_button :button_color, 'maroon' %><b>Maroon</b>
+    </p>
+  </div>
+  <div class="clear"></div>
+  <%= f.label :button_position, "Button Position" %><br />
+  <div class="banner_form_radios">  
+    <p>
+      <%= f.radio_button :button_position, 'left' %><b>Left Side</b>
+    </p>
+    <p>
+      <%= f.radio_button :button_position, 'right' %><b>Right Side</b>
+    </p>
+  </div>
+  <div class="clear"></div>
+  <p>
+    <%= f.label :button_text %><br />
+    <%= f.text_field :button_text %>
+  </p>
+  <p>
+    <%= f.label :button_url %><br />
+    <%= f.text_field :button_url %>
+  </p></div>
+  <p>
+    <%= f.submit 'Submit' %>
+  </p>
+<% end %>

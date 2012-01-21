@@ -1,0 +1,24 @@
+  <div id="student_login">
+    <ul>    
+      <li>
+        Welcome, 
+        <% if current_student %>
+          <%= current_student.name %>
+        <% else %>
+          Guest
+        <% end %>
+      </li>
+      <% unless current_student %>
+      <li>
+        <%= link_to "Register" %>
+      </li>
+      <% end %>
+      <li>
+        <% if current_student %>
+          <%= link_to "Logout", student_logout_path %>
+        <% else %>
+          <%= link_to "Login", student_login_path %>
+        <% end %>
+      </li>
+    </ul>
+  </div>

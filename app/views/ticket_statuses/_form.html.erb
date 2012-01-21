@@ -1,0 +1,14 @@
+<%= form_for(@ticket_status) do |f| %>
+  <%= render :partial => "shared/error_block", :locals => {:object => f} %>
+  <p>
+    <%= f.label :status_name %><br />
+    <%= f.text_field :status_name %>
+  </p>
+  <p>
+    <%= f.label :status_type %><br />
+    <%= f.text_field :status_type %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>

@@ -1,0 +1,8 @@
+<div class="full_20_wrap">
+  <div class="grid_6 alpha">
+    <%= render :partial => 'banners/form', :locals => {:banner => @banner} %>
+  </div>
+  <div class="grid_5 omega">
+    <%= image_tag(@banner.banner.url(:micro), :alt => "#{@banner.headline}" ) %>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+#main_content {
+  background: #fff;
+  padding-bottom:20px;
+}
+.admin_sidebar {
+  position: relative;
+  float: left;
+  width: 200px;
+  background: #ddd;
+}
+ul#admin_nav_ul li, ul#employee_nav_ul li {
+  width: 200px;
+}
+ul#admin_nav_ul li a:hover, ul#employee_nav_ul li a:hover, ul#employee_nav_ul li.employee_logout a:hover {
+  background: #72bf44;
+  color: #fff;
+}
+ul#admin_nav_ul li a {
+  display: block;
+  color: #444;
+  padding: 10px;
+  text-decoration: none;
+}
+ul#employee_nav_ul li.employee_logout {
+  float: right;
+}
+#admin_content {
+  position: relative;
+  float: left;
+  padding: 20px;
+  width: 720px;
+}

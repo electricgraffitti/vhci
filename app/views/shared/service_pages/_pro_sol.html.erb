@@ -1,0 +1,8 @@
+<div id="problem_solution_boxes">
+  <%= render :partial => 'shared/service_pages/problem_box', :locals => {:s => s, :acronym => acronym} %>
+  <%= render :partial => 'shared/service_pages/solution_box', :locals => {:s => s, :acronym => acronym} %>
+  <div class="top_stripe <%= acronym %>_light_bg "></div>
+  <div class="bottom_stripe <%= acronym %>_dark_bg ">
+    <div class="stripe_icon <%= acronym %>"></div>
+  </div>
+</div>

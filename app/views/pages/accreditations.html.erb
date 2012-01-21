@@ -1,0 +1,37 @@
+<% meta_keywords("healthcare insight accreditations, fraud fighting organizations")%>
+<% meta_description("HealthCare Insight is accredited with these organizations. URAC, SAS 70 certified and HIPAA compliant") %>
+<% page_title("HealthCare Insight Accreditations") %>
+
+<% content_for :banner do %>
+  <%= render :partial => 'shared/banners/short_banner', :locals => {:page => "accreditations"} %>
+<% end %>
+
+<div class="full_row">
+  <div class="page_description">  
+    <h2 class="green">Start Paying Right. Start Saving Money.</h2>
+    <p>
+      Unique markets provide unique challenges. That’s why we tailor our payment integrity solutions and services to fit your needs and goals. Learn more about our customized services and how clinical validation delivers better results. 
+    </p>
+  </div>
+  <%= render :partial => 'shared/quotes/small_quote', :locals => {:color => 'green', :quote => @quote} %>
+</div>
+
+<div class="gray_box thin">
+  <%= render :partial => 'shared/accreditations/certification_boxes' %>
+</div>
+
+<div class="full_row">
+  <h2 class="thick_thin_header"><span>MEMBERSHIPS &</span> Associations.</h2>
+</div>
+
+<%= render :partial => "shared/accreditations/accreditations_grid" %>
+
+
+<% content_for :javascripts do %>
+  <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+      app.ctaArrows();
+      accreds.accredsPopup();
+    });
+  </script>
+<% end %>

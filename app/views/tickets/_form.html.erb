@@ -1,0 +1,53 @@
+<% form_for(@ticket, :html => { :multipart => true }) do |f| %>
+  <%= render :partial => "shared/error_block", :locals => {:object => f} %>
+<div class="grid_10">
+  <h2>Create Ticket</h2>
+  <div id="ticket_form" class="grid_5 alpha omega">
+    <p>
+      <%= f.label :subject %><br />
+      <%= f.text_field :subject %>
+    </p>
+    <p>
+      <%= f.label :description %><br />
+      <%= f.text_area :description, :rows => 7, :cols => 38 %>
+    </p>
+  </div>
+  <div class="grid_2 alpha omega">
+    <p>
+      <%= f.label :due_date %><br />
+      <%= f.text_field :due_date, :id => 'ticket_date_select' %>
+    </p>
+    <p>
+      <%= f.label :ticket_status_id, "Set Ticket Status" %><br />
+      <%= collection_select(:ticket, :ticket_status_id, TicketStatus.all, :id, :status_name)%>
+    </p>
+    <p>
+      <%= f.label :priority_id, "Ticket Priority" %><br />
+      <%= collection_select(:ticket, :priority_id, Priority.all, :id, :priority_name)%>
+    </p>
+  </div>
+  <div class="grid_3 omega">
+    <%= render :partial => 'tickets/ticket_asset_upload', :locals => {:ticket => @ticket} %>
+  </div>
+</div>
+<div class="clear"></div>
+<div class="grid_13 margin_top_10">
+  <h2>Assign Ticket</h2>
+  <%= render :partial => 'employees/listed_employee_form', 
+             :locals => {
+               :marketing => @marketing,
+               :administration => @administration,
+               :operations => @operations,
+               :account_managment => @account_managment
+               } %>
+</div>
+
+<div class="clear"></div>
+  <% f.fields_for :owner do |owner_form|%>
+      <%= owner_form.hidden_field :ticket_id, :value => @ticket.id %>
+      <%= owner_form.hidden_field :employee_id, :value => current_employee.id %>
+  <% end %>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>

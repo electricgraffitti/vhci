@@ -1,0 +1,19 @@
+<h2>Assigned Tickets</h2>
+<% unless overdue_assigned_tickets.blank? %>
+  <h5>Current OVERDUE Assigned Ticket Count - <%= overdue_assigned_tickets.size %></h5>
+    <ul class="ticket_list">
+      <% overdue_assigned_tickets.each do |ticket| %>
+        <li><%= link_to "#{ticket.subject}", ticket_path(ticket) %> - <small class="red"><b>Owner:</b> <%=h ticket.employee.fullname %> - OVERDUE!</small></li>
+      <% end %>
+    </ul>
+  <% end %>
+<% if assigned_tickets != nil %>
+<h5>Current Assigned Ticket Count - <%= assigned_tickets.size %></h5>
+  <ul class="ticket_list">
+    <% assigned_tickets.each do |ticket| %>
+      <li><%= link_to "#{ticket.subject}", ticket_path(ticket) %> - <small><b>Owner:</b> <%=h ticket.employee.fullname %> | <span class="<%= ticket.priority.priority_type %>"> Status: <%= ticket.priority.priority_name %></span> | <span class="<%= ticket.ticket_status.status_type %>"> Status: <%= ticket.ticket_status.status_name %></span></small></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>You currently have 0 assigned tickets</p>
+<% end %>

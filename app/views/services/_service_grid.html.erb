@@ -1,0 +1,39 @@
+<div id="grid">
+  <div id="service_grids" class="inner_grid">
+    <div class="grid_box left_side_box odd_row">
+      <div class="<%= acronym %>_brochure grid_image">
+        <%= link_to "Brochure", document_path(s.document), :alt => "View #{s.title} Brochure", :title => "View #{s.title} Brochure", :id => 'brochure_link'  %>
+      </div>
+      <div class="grid_content_wrap">
+        <h3><%= link_to "View #{s.acronym} Brochure", document_path(s.document), :alt => "View #{s.title} Brochure", :title => "View #{s.title} Brochure"  %></h3>
+        <p>Want more information? View and
+        download the <%= s.acronym %> service brochure.</p>
+      </div>
+    </div>
+    <div class="grid_box right_side_box odd_row">
+      <div class="grid_image bene9"></div>
+      <div class="grid_content_wrap">
+        <h3><%= link_to "Read Success Stories", "http://www2.hcinsight.com/l/1492/2010-01-21/GAS9X/67391_testimonial_booklet.pdf", :alt => "HealthCare Insight Testimonials"%></h3>
+        <p>Still need convincing? Read and download 
+        customer case studies and testimonials.</p>
+      </div>
+    </div>
+    <div class="grid_box left_side_box even_row last_row">
+      <%= link_to raw("<div class='grid_image bene10'></div>"), videos_path, :alt => "HealthCare Insight Videos" %>
+      <div class="grid_content_wrap">
+        <h3><%= link_to "Watch Videos", videos_path, :alt => "HealthCare Insight Videos" %></h3>
+        <p>Rather watch a video? Check out our latest 
+        webinars, tutorials and commercials.</p>
+      </div>
+    </div>
+    <div class="grid_box right_side_box even_row last_row">
+      <%= link_to raw("<div class='grid_image bene11'></div>"), APP['free_trial_landing_page'], :alt => "Free Cost Reduction Analysis" %>
+      <div class="grid_content_wrap service_content_wrap">
+        <h3><%= link_to "Request Free Trial", "#{s.landing_link}", :alt => "Free Cost Reduction Analysis" %></h3>
+        <p>Ready to take the next step? Request a 
+        free <%= s.acronym %> trial and Cost Reduction Analysis.</p>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>

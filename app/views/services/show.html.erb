@@ -1,0 +1,32 @@
+<% if @service.keywords
+  meta_keywords(@service.keywords)
+  end %>
+<% if @service.meta_description
+  meta_description(@service.meta_description)
+  end %>
+<% page_title "#{@service.title}"%>
+
+<% content_for :banner do %>
+  <%= render :partial => "shared/banners/service_show_banner", :locals => {:s => @service}%>
+<% end %>
+
+<%= render :partial => "services/service_mid_section", :locals => {:s => @service, :acronym => @acronym, :quote => @quote} %>
+<%= render :partial => "shared/service_pages/pro_sol", :locals => {:s => @service, :acronym => @acronym} %>
+<%= render :partial => "services/service_grid", :locals => {:s => @service, :acronym => @acronym} %>
+
+<div class="clear"></div>
+  <% if current_user %>
+  <div class="grid_12 full_wrap">
+    <%= link_to 'New', new_service_path %> |
+    <%= link_to 'Edit', edit_service_path(@service) %>
+    </div>
+<% end %>
+
+
+<% content_for :javascripts do %>
+  <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+      app.ctaArrows();
+    });
+  </script>
+<% end %>

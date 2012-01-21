@@ -1,0 +1,41 @@
+<div class="image_wrap"><%= image_tag(employee.avatar.url(:small), :alt => employee.fullname) %></div>
+<div class="grid_3">  
+  <h2><%=h employee.fullname %></h2>
+  <p>
+    <b>Department:</b>
+    <%=h employee.department.name %>
+  </p>
+  <% if employee = current_employee || employee_admin? %>
+  <p>
+    <b>Username:</b>
+    <%=h employee.username %>
+  </p>
+  <% end %>
+  <% if super_user? %>
+    <p>
+      <b>Role:</b>
+      <%=h employee.role.name %>
+    </p>
+  <% end %>
+</div>
+<div class="grid_3">
+  <p>
+    <b>Phone Ext:</b>
+    <%=h employee.ext %>
+  </p>
+
+  <p>
+    <b>Home phone:</b>
+    <%=h employee.home_phone %>
+  </p>
+
+  <p>
+    <b>Cell phone:</b>
+    <%=h employee.cell_phone %>
+  </p>
+
+  <p>
+    <b>Home fax:</b>
+    <%=h employee.home_fax %>
+  </p>
+</div>

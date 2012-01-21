@@ -1,0 +1,75 @@
+<%= form_for(@article, :html => {:multipart => true }) do |f| %>
+  <%= render :partial => "shared/error_block", :locals => {:object => @article} %>
+
+<div class="grid_5">
+  <h4>Article Content</h4>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description, :rows => 10, :cols => 48 %>
+  </p>
+  <p>
+    <%= f.label "Choose Article Type" %><br />
+    <%= collection_select(:article, :article_type_id, @article_types, :id, :article_type)%>
+  </p>
+  <p>
+    <%= f.label :third_party, "Third Party Article?" %><br />
+    <%= f.check_box :third_party %>
+  </p>
+  <p id="third_party_url_field">
+    <%= f.label :third_party_url, "Third Party URL" %><br />
+    <%= f.text_field :third_party_url %>
+  </p>
+  <p>
+    <% f.fields_for assets do |asset_form| %>
+      <%= asset_form.label "Add Image" %><br />
+      <%= asset_form.file_field :attachment, :size => 16, :index => nil %>
+    <% end %>
+  </p>
+  <!-- <p>
+    <% f.fields_for :coverflows do |cover_form|%>
+    <%= cover_form.label "Add Cover Flow" %><br />
+    <%= cover_form.file_field :cover, :size => 16 %>
+    <% end %>
+  </p> -->
+</div>
+<div class="grid_5">
+  <h4>Article SEO</h4>
+  <p>
+    <%= f.label :meta_description, "Meta Description (usually the first paragraph)" %><br />
+    <%= f.text_area :meta_description, :rows => 10, :cols => 48 %>
+  </p>
+  <p>
+    <%= f.label :keywords, "Keywords (2-3 phrases relevant to the description)" %><br />
+    <%= f.text_field :keywords %>
+  </p>
+  <p>
+    <%= f.label :permalink, "Permalink (all-lowercase-no-spaces)" %><br />
+    <%= f.text_field :permalink %>
+  </p>
+</div>
+<div class="grid_5">
+  <h3>Article Dependencies</h3>
+  <p>
+    <%= link_to "Create New Article Type", new_article_type_path %>
+  </p>
+  <p>
+    <h4>Article Types Available</h4>
+    <ul>
+      <% for article_type in @article_types %>
+      <li><%= article_type.article_type %></li>
+      <% end %>
+    </ul>
+  </p>
+</div>
+<div class="clear"></div>
+<div class="grid_5"
+  <p>
+    <%= f.submit 'Submit' %>
+    <%= link_to "Back", request.env["HTTP_REFERER"] %>
+  </p>
+</div>
+<% end %>

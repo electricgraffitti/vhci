@@ -1,0 +1,40 @@
+<%= form_for(@advertisement, :html => {:multipart => true}) do |f| %>
+  <%= render :partial => "shared/error_block", :locals => {:object => @advertisement} %>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description, :rows => 5, :cols => 28 %>
+  </p>
+  <p>
+    <%= f.label :link_url, "Ad Link" %><br />
+    <%= f.text_field :link_url %>
+  </p>
+  <p>
+    <%= f.label :ad_image, "Upload Ad Image" %><br/>
+    <%= f.file_field :ad_image %>
+  </p>
+  <p>
+    <%= f.label :listed_order, "Ad Order" %><br />
+    <%= f.text_field :listed_order, :size => 3 %>
+  </p>
+  <p>
+    <%= f.radio_button :ad_type, 'regular', {:checked => true} %><b>Regular Index Add (280x116)</b>
+  </p>
+  <p>
+    <%= f.radio_button :ad_type, 'banner' %><b>Banner Ad (We don't have these yet)</b>
+  </p>
+  <p>
+    <%= f.label :active %><br />
+    <%= f.check_box :active %>
+  </p>
+  <p>
+    <%= f.label :expiration_date, "Expiration Date" %><br />
+    <%= f.text_field :expiration_date, :id => "ad_expiration_date" %>
+  </p>
+  <p>
+    <%= f.submit 'Submit' %>
+  </p>
+<% end %>

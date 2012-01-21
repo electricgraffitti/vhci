@@ -1,0 +1,35 @@
+<h1>Listing quotes</h1>
+
+<table>
+  <tr>
+    <th>Service</th>
+    <th>Page</th>
+    <th>Line 1</th>
+    <th>Line 2</th>
+    <th>Line 3</th>
+    <th>Author</th>
+    <th>Line count</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @quotes.each do |quote| %>
+  <tr>
+    <td><%= quote.service_id %></td>
+    <td><%= quote.page %></td>
+    <td><%= quote.line_1 %></td>
+    <td><%= quote.line_2 %></td>
+    <td><%= quote.line_3 %></td>
+    <td><%= quote.author %></td>
+    <td><%= quote.line_count %></td>
+    <td><%= link_to 'Show', quote %></td>
+    <td><%= link_to 'Edit', edit_quote_path(quote) %></td>
+    <td><%= link_to 'Destroy', quote, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Quote', new_quote_path %>

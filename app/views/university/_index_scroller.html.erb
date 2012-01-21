@@ -1,0 +1,36 @@
+<div id="iu_slider" class="small_scroller_box">
+  <div id="iu_scroll">
+    <div id="iu_scrollContainer">
+      <div id="panel1" class="panels">
+        <h3>Learn From Industry Professionals</h3>
+        <%= image_tag('insight_university/index_panels/pci_icon.png', :class => "left") %>
+        <p>Our industry professionals are regularly contributing advice and discussing the latest news in health care fraud. We’ll also answer the questions you have about your claims, providers and just about anything else you might want to ask us.</p>
+      </div>
+      <div id="panel2" class="panels">
+        <h3>Stay up to date with the latest schemes</h3>
+        <%= image_tag('insight_university/index_panels/gears.png', :class => "left") %>
+        <p>Our team is always on the lookout for the latest fraud schemes and practices. We’ll keep you up to date by telling you what to look for and where to look. Health care fraud prevention is our business, we’re going to help make it yours.</p>
+      </div>
+      <div id="panel3" class="panels">
+        <h3>Watch at your own pace</h3>
+        <%= image_tag('insight_university/index_panels/webinar_screen.png', :class => "left") %>
+        <p>Each of our products includes online video tutorials that will show you the ins-and-outs of our software. We understand how busy you are, and there’s no need for information overload, so go ahead and watch them when you have the time.</p>
+      </div>
+    </div>
+  </div>
+  <div id="scroller_nav">
+    <div class="iu_banner_nav">
+       <ul id="iu_banner_nav_ul" class="iu_nav_ul iu_navigation">
+         <li class="b_nav1 iu_banner_li">
+            <%= link_to "1", '#panel1', :class => 'selected' %>
+          </li>
+         <li class="b_nav2 iu_banner_li">
+           <%= link_to "2", '#panel2'%>
+         </li>
+         <li class="b_nav3 iu_banner_li">
+           <%= link_to "3", '#panel3'%>
+         </li>
+       </ul>
+     </div>
+  </div>
+</div>

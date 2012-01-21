@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+  <%= render :partial => "layouts/headmeta" %>
+  <%= stylesheet_link_tag "admin" %>
+</head>
+<body>
+  <!-- Application Layout -->
+  <div id="wrapper">
+    <%= render :partial => 'layouts/flash', :locals => {:flash => flash} %>
+	  <header class="clearfix">
+      <%= render :partial => "layouts/header" %>
+	  </header>
+    <div id="bd" class="clearfix">
+      <div class="main_content clearfix">
+        <aside class="admin_sidebar">
+        <% if current_user %>
+          <%= render :partial => "shared/admin/admin_nav" %>
+        <% end %>
+        </aside>
+        <div id="admin_content">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+    <footer class="clearfix">
+      <%= render :partial => "layouts/footer" %>
+    </footer>
+	</div>
+	<%= render :partial => "layouts/scripts" %>
+</body>
+</html>
+

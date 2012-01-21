@@ -1,0 +1,26 @@
+<% page_title "#{@ticket.subject}"%>
+<div class="grid_16 margin_top_5">
+  <%= link_to 'Back to My Page', employee_path(current_employee)%>
+</div>
+<div class="margin_top_10 grid_12 alpha omega">
+  <h1><%=h @ticket.subject %> - <small>Due Date: <%= @ticket.due_date.to_s(:long) %></small></h1>
+  <h2 class="grid_7">Ticket Goal: <small>priority - <span class='<%= @ticket.priority.priority_type %>'><%=h (@ticket.priority.priority_type).upcase %></span></small></h2><div class="grid_4 margin_top_5"><b>Current Status:</b> <span class='<%= @ticket.ticket_status.status_type %>'><%=h @ticket.ticket_status.status_name %></span></div>
+    <div class="grid_10"><%= @ticket.description %></div>
+    <div class="clear"></div>
+    <%= render :partial => "tickets/update_list", :locals => {:updates => @ticket.ticket_updates.listed.paginate(:page => params[:page], :per_page => 5)} %>
+    <%= render :partial => 'ticket_updates/ticket_update', :locals => {:ticket_update => @ticket_update, :ticket => @ticket} %>
+</div>
+
+
+<div class="margin_top_10 grid_4 alpha omega">
+  <div class="ticket_owner_header grid_4 alpha omega right">
+    <h4>Ticket Owner:</h4>
+    <%= image_tag(@ticket.employee.avatar.url(:thumb), :class => 'right') %>
+    <%= @ticket.employee.fullname %>
+  </div>
+  <div class="clear"></div>
+  <%= render :partial => 'tickets/assignment_list', :locals => {:ticket => @ticket} %>
+  <div class="clear"></div>
+  <%= render :partial => 'tickets/ticket_attachment_list', :locals => { :ticket => @ticket } %>
+</div>
+<div class="clear"></div>

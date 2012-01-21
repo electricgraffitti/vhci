@@ -1,0 +1,23 @@
+<%= link_to raw("<h1 id='hci_logo'>Health Care Insight</h1>"), root_path %>
+<%#= link_to(image_tag("header/verisk_logo_top.png"), "http://www.veriskhealth.com", :alt => "Verisk Health", :id => "top_verisk_logo") %>
+<%= link_to(raw("A Division of Verisk Health<sup>&reg;</sup>"), "http://www.veriskhealth.com", :alt => "Verisk Health", :id => "top_verisk_logo") %>
+<div id="search_box_wrap" class="right">
+  <% form_tag 'http://www2.hcinsight.com/s/1492/ecd49b6c89fda642946b7a6c5de4198c', :method => :get do %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search", :name => nil, :title => "Search HealthCare Insight", :class => "black_btn" %>
+  <% end %>
+</div>
+
+<div id="main_nav" class="grid_12 alpha omega">
+  <ul id="main_nav_ul" class="nav_ul">
+    <li class="main_nav_li nav1 highlight"><%= link_to "Home", root_path, :id => "home", :class => "main_nav_a" %></li>
+    <li class="main_nav_li nav2 highlight"><%= link_to "Services", services_path, :id => "services", :class => "main_nav_a" %></li>
+    <li class="main_nav_li nav3 highlight"><%= link_to "Benefits", benefits_path, :id => "benefits", :class => "main_nav_a" %></li>
+    <li class="main_nav_li nav4 highlight"><%= link_to "Markets", markets_path, :id => "markets", :class => "main_nav_a" %></li>
+    <li class="main_nav_li nav5 highlight"><%= link_to "Resources", media_path, :id => "resources", :class => "main_nav_a" %></li>
+    <li class="main_nav_li nav6 highlight nucleus"><%= link_to "Nucleus", nucleus_path, :id => "nucleus", :class => "main_nav_a" %></li>
+    <li class="main_nav_li nav7 highlight nucleus"><%= link_to "More Info", APP['free_trial_landing_page'], :id => "free_trial", :class => "main_nav_a" %></li>
+    <li class="main_nav_li nav8 highlight"><%= link_to "About Us", about_path, :id => 'about_us', :class => "main_nav_a" %></li>
+    <li class="main_nav_li nav9 highlight last"><%= link_to "Contact", contact_path, :id => 'contact', :class => "main_nav_a" %></li>
+  </ul>
+</div>

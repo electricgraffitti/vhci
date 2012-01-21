@@ -1,0 +1,42 @@
+<h1>Listing students</h1>
+
+<table>
+  <tr>
+    <th>Username</th>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Company</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th>Crypted password</th>
+    <th>Password salt</th>
+    <th>Persistence token</th>
+  </tr>
+
+<% @students.each do |student| %>
+  <tr>
+    <td><%=h student.username %></td>
+    <td><%=h student.first_name %></td>
+    <td><%=h student.last_name %></td>
+    <td><%=h student.email %></td>
+    <td><%=h student.phone %></td>
+    <td><%=h student.company %></td>
+    <td><%=h student.city %></td>
+    <td><%=h student.state_id %></td>
+    <td><%=h student.zip %></td>
+    <td><%=h student.crypted_password %></td>
+    <td><%=h student.password_salt %></td>
+    <td><%=h student.persistence_token %></td>
+    <td><%= link_to 'Show', student %></td>
+    <td><%= link_to 'Edit', edit_student_path(student) %></td>
+    <td><%= link_to 'Destroy', student, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New student', new_student_path %>

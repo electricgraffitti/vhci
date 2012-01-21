@@ -1,0 +1,49 @@
+<h2 class="title title_color">Videos</h2>
+  <table id="videos_table" class="display">
+    <thead>  
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Type</th>
+        <th>URL</th>
+        <th>View Product</th>
+        <th>Edit Product</th>
+        <th>Delete Product</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @videos.each do |s| %>
+        <tr>
+          <td><%=h s.title %></td>
+          <td><%= truncate(s.description, :length => 250) %></td>
+          <td><%=h s.video_type.video_type %></td>
+          <% if s.third_party %>
+          <td><%=h s.third_party_url %></td>
+          <% else %>
+          <td> </td>
+          <% end %>
+          <% if s.third_party %>
+          <td><%= link_to 'View Video', "#{s.third_party_url}" %></td>
+          <% else %>
+          <td><%= link_to 'View Video', video_path(s) %></td>
+          <% end %>
+          <td><%= link_to 'Update Video', edit_video_path(s) %></td>
+          <td><%= link_to 'Delete Video', s, :confirm => 'Are you sure?', :method => :delete %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to 'New Video', new_video_path %>
+
+  <% content_for :javascripts do %>
+    <script type="text/javascript" charset="utf-8">
+      $(document).ready(function() {
+        admin.employeeEdit();
+        admin.datePickers();
+        admin.dataTables();
+        admin.thirdPartyUrlToggle();
+        admin.multipleUploads();
+      });
+    </script>
+  <% end %>

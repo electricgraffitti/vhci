@@ -1,0 +1,11 @@
+<% page_title "Links About Health Care "%>
+
+<% content_for :banner do %>
+  <%= render :partial => "links/banner" %>
+<% end %>
+
+<!-- Render Helper Module Here -->
+<%= render :partial => "index_link", :locals => {:links => @links} %>
+<div class="space_left">
+  <%= link_to "Back", request.env["HTTP_REFERER"], :class => "btn"%>
+</div>

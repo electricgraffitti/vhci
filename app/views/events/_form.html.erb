@@ -1,0 +1,65 @@
+<%= form_for(@event, :html => {:multipart => true }) do |f| %>
+  <%= render :partial => "shared/error_block", :locals => {:object => @event} %>
+<div class="grid_5">
+  <h4>Event Content</h4>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description, :rows => 5, :cols => 28 %>
+  </p>
+  <p>
+    <%= f.label :place %><br />
+    <%= f.text_field :place %>
+  </p>
+  <p>
+   <%= f.label :start_date, "Event Start Date" %><br />
+   <%= f.text_field :start_date, :id => "event_start_date" %>
+  </p>
+  <p>
+   <%= f.label :end_date, "Event End Date" %><br />
+   <%= f.text_field :end_date, :id => "event_end_date" %>
+  </p>
+  <p>
+   <%= f.label :website_url %><br />
+   <%= f.text_field :website_url %>
+  </p>
+  <p>
+    <% for asset in @event.assets %>
+      <%= fields_for "event[attachments][]", asset do |asset_form|%>
+        <%= asset_form.label "Add Attachment" %><br />
+        <%= asset_form.file_field :attachment, :size => 16 %><br/>
+      <% end %>
+    <% end %>
+  </p>
+  <!-- <p>
+    <% f.fields_for :coverflows do |cover_form|%>
+    <%= cover_form.label "Add Cover Flow" %><br />
+    <%= cover_form.file_field :cover, :size => 16 %>
+    <% end %>
+  </p> -->
+</div>
+<div class="grid_5">
+  <h4>Event SEO</h4>
+  <p>
+    <%= f.label :meta_description %><br />
+    <%= f.text_area :meta_description, :rows => 5, :cols => 28 %>
+  </p>
+  <p>
+    <%= f.label :keywords %><br />
+    <%= f.text_field :keywords %>
+  </p>
+  <p>
+    <%= f.label :permalink %><br />
+    <%= f.text_field :permalink %>
+  </p>
+</div>
+<div class="clear"></div>
+<div class="grid_5"
+  <p>
+    <%= f.submit 'Submit'%>
+  </p>
+</div>
+<% end %>

@@ -1,0 +1,5 @@
+<% if obj.third_party? %>
+  <%= render :partial => 'shared/articles/third_party_article', :locals => {:obj => obj} %>
+<% else %>
+  <%= render :partial => 'shared/articles/article', :locals => {:obj => obj} %>
+<% end %>

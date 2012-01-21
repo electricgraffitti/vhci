@@ -1,0 +1,40 @@
+<h2 class="title title_color">HCI Services</h2>
+  <table id="services_table" class="display">
+  <thead>  
+    <tr>
+      <th>Service</th>
+      <th>Acronym</th>
+      <th>Permalink</th>
+      <th>View Product</th>
+      <th>Edit Product</th>
+      <th>Delete Product</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @services.each do |s| %>
+      <tr>
+        <td><%=h s.title %></td>
+        <td><%=h s.acronym %></td>
+        <td><%=h s.permalink %></td>
+        <td><%= link_to 'View Service', service_path(s) %></td>
+        <td><%= link_to 'Update Service', edit_service_path(s) %></td>
+        <td><%= link_to 'Delete Service', s, :confirm => 'Are you sure?', :method => :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'New Service', new_service_path %>
+
+
+<% content_for :javascripts do %>
+  <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+      admin.employeeEdit();
+      admin.datePickers();
+      admin.dataTables();
+      admin.thirdPartyUrlToggle();
+      admin.multipleUploads();
+    });
+  </script>
+<% end %>

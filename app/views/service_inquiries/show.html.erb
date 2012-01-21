@@ -1,0 +1,18 @@
+<p>
+  <b>Business type:</b>
+  <%=h @service_inquiry.business_type_id %>
+</p>
+
+<p>
+  <b>Claim type:</b>
+  <%=h @service_inquiry.claim_type_id %>
+</p>
+
+<p>
+  <b>Goal type:</b>
+  <%=h @service_inquiry.goal_type_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_service_inquiry_path(@service_inquiry) %> |
+<%= link_to 'Back', service_inquiries_path %>

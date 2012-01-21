@@ -1,0 +1,9 @@
+<div class="listed_items">
+   <h2 class="green">Fraud News</h2>
+   <% objects.each do |obj| %>
+   <% unless obj.article_type == "press_release" %>
+     <%= render :partial => 'shared/articles/small_article', :locals => {:obj => obj} %>
+     <% end %>
+   <% end %>
+   <%= link_to "View All Articles", articles_path, :class => "right" %>
+</div>

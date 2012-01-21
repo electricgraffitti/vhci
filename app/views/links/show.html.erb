@@ -1,0 +1,29 @@
+<p>
+  <b>Title:</b>
+  <%=h @link.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @link.description %>
+</p>
+
+<p>
+  <b>Link url:</b>
+  <%=h @link.link_url %>
+</p>
+
+<p>
+  <b>Keywords:</b>
+  <%=h @link.keywords %>
+</p>
+
+<p>
+  <b>Permalink:</b>
+  <%=h @link.permalink %>
+</p>
+<% if current_user %>
+  <%= link_to 'Edit', edit_link_path(@link) %> |
+  <%= link_to "New", new_link_path %> |
+<% end %>
+<%= link_to "Back", request.env["HTTP_REFERER"] %>

@@ -1,0 +1,41 @@
+<h2 class="title title_color">Articles</h2>
+<table id="articles_table" class="display">
+  <thead>  
+    <tr>
+      <th>Title</th>
+      <th>Type</th>
+      <th>View Product</th>
+      <th>Edit Product</th>
+      <th>Delete Product</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @articles.each do |s| %>
+      <tr>
+        <td><%=h s.title %></td>
+        <td><%=h s.article_type.article_type %></td>
+        <% if s.third_party %>
+        <td><%= link_to 'View Article', "#{s.third_party_url}" %></td>
+        <% else %>
+        <td><%= link_to 'View Article', article_path(s) %></td>
+        <% end %>
+        <td><%= link_to 'Update Article', edit_article_path(s) %></td>
+        <td><%= link_to 'Delete Article', s, :confirm => 'Are you sure?', :method => :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'New Article', new_article_path %>
+
+<% content_for :javascripts do %>
+  <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+      admin.employeeEdit();
+      admin.datePickers();
+      admin.dataTables();
+      admin.thirdPartyUrlToggle();
+      admin.multipleUploads();
+    });
+  </script>
+<% end %>

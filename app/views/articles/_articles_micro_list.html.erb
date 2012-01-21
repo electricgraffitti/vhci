@@ -1,0 +1,11 @@
+<div class="resource_section resource_press_releases full_wrap">
+  <h3 class="orange">Fraud News</h3>
+  <div class="service_wrap sub_news_box">
+    <% objects.each do |obj| %>
+      <%= render :partial => 'articles/article_list', :locals => {:obj => obj} %>
+    <% end %>
+    <% unless articles_path %>
+      <div class="content_wrap"> <%= link_to "View All Articles", articles_path %></div>
+    <% end %>
+  </div>
+</div>

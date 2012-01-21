@@ -1,0 +1,24 @@
+<h1>Listing service_inquiries</h1>
+
+<table>
+  <tr>
+    <th>Business type</th>
+    <th>Claim type</th>
+    <th>Goal type</th>
+  </tr>
+
+<% @service_inquiries.each do |service_inquiry| %>
+  <tr>
+    <td><%=h service_inquiry.business_type_id %></td>
+    <td><%=h service_inquiry.claim_type_id %></td>
+    <td><%=h service_inquiry.goal_type_id %></td>
+    <td><%= link_to 'Show', service_inquiry %></td>
+    <td><%= link_to 'Edit', edit_service_inquiry_path(service_inquiry) %></td>
+    <td><%= link_to 'Destroy', service_inquiry, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New service_inquiry', new_service_inquiry_path %>

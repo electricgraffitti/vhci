@@ -1,0 +1,28 @@
+<div class="grid_3 alpha omega">
+  <h4>Marketing Group</h4>
+  <% marketing.each do |e|%>
+      <%= check_box_tag "ticket[employee_ids][]", e.id %>
+      <%= label :employee_id, "#{e.fullname}" %><br/>
+  <% end %>
+</div>
+<div class="grid_3 alpha omega">
+  <h4>Administration Group</h4>
+  <% administration.each do |e|%>
+      <%= check_box_tag "ticket[employee_ids][]", e.id %>
+      <%= label :employee_id, "#{e.fullname}" %><br/>
+  <% end %>
+</div>
+<div class="grid_3 alpha omega">
+  <h4>Operations Group</h4>
+  <% operations.each do |e|%>
+      <%= check_box_tag "ticket[employee_ids][]", e.id %>
+      <%= label :employee_id, "#{e.fullname}" %><br/>
+  <% end %>
+</div>
+<div class="grid_3 alpha omega">
+  <h4>Account Management</h4>
+  <% account_managment.each do |e|%>
+      <%= check_box_tag "ticket[employee_ids][]", e.id %>
+      <%= label :employee_id, "#{e.fullname}" %><br/>
+  <% end %>
+</div>

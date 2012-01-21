@@ -1,0 +1,12 @@
+<p class="margin_top_10">
+  <h4>Assigned To</h4>
+  <ul>
+    <% ticket.employees.each do |employee| %>
+      <% if employee == current_employee %>
+      <li>Me</li>
+      <% else %>
+      <li><%= employee.fullname %></li>
+      <% end %>
+    <% end %>
+  </ul>
+</p>

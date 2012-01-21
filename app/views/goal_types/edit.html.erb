@@ -1,0 +1,16 @@
+<h1>Editing goal_type</h1>
+
+<% form_for(@goal_type) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :goal_type %><br />
+    <%= f.text_field :goal_type %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @goal_type %> |
+<%= link_to 'Back', goal_types_path %>

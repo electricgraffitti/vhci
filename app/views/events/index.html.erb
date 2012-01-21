@@ -1,0 +1,11 @@
+<% page_title "HealthCare Insight Events "%>
+
+<% content_for :banner do %>
+  <%= render :partial => "events/banner" %>
+<% end %>
+
+<%#= render :partial => "# Put helper Here" %>
+<%= render :partial => "index_event", :locals => {:obj => @events} %>
+<div class="space_left">
+  <%= link_to "Back", request.env["HTTP_REFERER"], :class => "btn"%>
+</div>

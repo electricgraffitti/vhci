@@ -1,0 +1,16 @@
+<% @services.each do |serv| %>
+  <div class='index_listing'>
+    <%= link_to image_tag(serv.avatar.url(:thumb), :alt => serv.title), service_path(serv), :class => "index_listing_image" %>
+    <h3><%= serv.title%>&reg;</h3>
+    <p><%= truncate(serv.description, :length => 455) %></p>
+    <div class="widget_links">
+      <% if current_user %>
+        <%= link_to 'New', new_service_path %> |
+        <%= link_to 'Edit', edit_service_path(serv) %> |
+      <% end %>
+      <%= link_to 'RSS', services_url(:rss) %> |
+      <%= link_to 'View More', serv %>
+    </div>
+    <div class='clear'></div>
+  </div>
+<% end %> 

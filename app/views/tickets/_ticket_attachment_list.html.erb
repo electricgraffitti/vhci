@@ -1,0 +1,14 @@
+<p class="margin_top_10">
+  <h4>Attachments</h4>
+  <ul>
+    <% ticket.ticket_assets.each do |att| %>
+      <li><%= link_to( att.attachment_file_name, ('/ticket_uploads/' + att.id.to_s + '/original_' + att.attachment_file_name)) %></li>
+    <% end %>
+    
+    <% ticket.ticket_updates.each do |update| %>
+      <% update.ticket_assets.each do |asset| %>
+        <li><%= link_to( asset.attachment_file_name, ('/ticket_uploads/' + asset.id.to_s + '/original_' + asset.attachment_file_name)) %></li>
+      <% end%>
+    <% end %>
+  </ul>
+</p>

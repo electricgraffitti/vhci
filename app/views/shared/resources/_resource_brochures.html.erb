@@ -1,0 +1,13 @@
+<h2 class="green">Brochures &amp; Magazines</h2>
+<% documents.each do |doc| %>
+  <div class="resource_brochure">
+    <% doc.coverflows.each do |coverflow| %>
+      <%= link_to image_tag(coverflow.cover.url(:brochure), :alt => doc.title), document_path(doc) %>
+    <% end %>
+    <h3><%= link_to "#{doc.title}", document_path(doc)  %></h3>
+    <p>
+      <%= doc.brochure_sub_heading %>
+    </p>
+    <%= link_to "View", document_path(doc) %> | <%= link_to "Download", " #{doc.download_link}", :alt => "Download #{doc.title} Brochure" %>
+  </div>
+<% end %>

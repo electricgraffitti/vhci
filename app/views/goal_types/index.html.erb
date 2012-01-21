@@ -1,0 +1,20 @@
+<h1>Listing goal_types</h1>
+
+<table>
+  <tr>
+    <th>Goal type</th>
+  </tr>
+
+<% @goal_types.each do |goal_type| %>
+  <tr>
+    <td><%=h goal_type.goal_type %></td>
+    <td><%= link_to 'Show', goal_type %></td>
+    <td><%= link_to 'Edit', edit_goal_type_path(goal_type) %></td>
+    <td><%= link_to 'Destroy', goal_type, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New goal_type', new_goal_type_path %>

@@ -1,0 +1,19 @@
+<% if @document.keywords
+  meta_keywords(@document.keywords)
+  end %>
+<% if @document.meta_description
+  meta_description(@document.meta_description)
+  end %>
+<% page_title "#{@document.title} " %>
+
+<% if @document.issuu_url? %>
+  <% content_for :banner do %>
+    <div id="issuu_frame">
+      <iframe src="<%= @document.issuu_url %>"></iframe>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="full_row">
+  <%= render :partial => 'shared/resources/resource_brochures', :locals => {:documents => @documents} %>
+</div>

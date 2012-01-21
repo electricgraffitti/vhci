@@ -1,0 +1,39 @@
+<% if @article.keywords
+  meta_keywords(@article.keywords)
+  end %>
+<% if @article.meta_description
+  meta_description(@article.meta_description)
+  end %>
+<% page_title "#{@article.title} " %>
+
+<% content_for :banner do %>
+  <% if @article.article_type.article_type == "hci_article" %>
+    <%= render :partial => "articles/ind_article_banner" %>
+  <% else %>
+    <%= render :partial => "articles/press_release_banner" %>
+  <% end %>
+<% end %>
+
+
+<%= render :partial => 'article', :locals => {:article => @article} %>
+<%= render :partial => 'articles_micro_list', :locals => {:objects => @articles} %>
+<div class="show_ad">
+  <%= render :partial => 'articles/current_ad', :locals => {:ads => @advertisements} %>
+</div>
+
+
+<div class="widget_links">
+<% if current_user %>
+  <%= link_to 'Edit', edit_article_path(@article) %> |
+  <%= link_to 'New', new_article_path %> |
+<% end %>
+<%= link_to "Back", request.env["HTTP_REFERER"] %>
+</div>
+
+<% content_for :javascripts do %>
+  <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+      app.ctaArrows();
+    });
+  </script>
+<% end %>

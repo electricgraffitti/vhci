@@ -1,0 +1,12 @@
+<%= form_for employee_session do |f| %>
+  <%= render :partial => "shared/error_block", :locals => {:object => f} %>
+  <p>
+    <%= f.label :username %><br/>
+    <%= f.text_field :username %>
+  </p>
+  <p>
+    <%= f.label :password %><br/>
+    <%= f.password_field :password %>
+  </p>
+  <p><%= f.submit "Login" %></p>
+<% end %>

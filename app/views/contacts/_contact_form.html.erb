@@ -1,0 +1,29 @@
+<div class="contact_form_wrap">
+  <%= form_tag("http://www2.hcinsight.com/l/1492/2009-12-21/G1YG9", :method => "post", :id => "contact_form") do %>
+    <div class="visible_field">
+      <%= label :contact, :contact_first_name, "First Name *" %><br />
+      <%= text_field :contact, :contact_first_name, :name => "contact_us_first_name" %>
+    </div>
+    <div class="visible_field">
+      <%= label :contact, :contact_last_name, "Last Name *" %><br />
+      <%= text_field :contact, :contact_last_name, :name => "contact_us_last_name" %>
+    </div>
+    <div class="visible_field">
+      <%= label :contact, :email, "Email Address *" %><br />
+      <%= text_field :contact, :email, :name => "contact_us_email" %>
+    </div>
+    <div class="visible_field">
+      <%= label :contact, :business_name, "Company *" %><br />
+      <%= text_field :contact, :business_name, :name => "contact_us_business_name" %>
+    </div>
+    <div class="visible_field">
+      <%= label :contact, :comment, "Comments" %><br />
+      <%= text_area :contact, :comment, :name => "contact_us_comment", :rows => 3, :cols => 28   %>
+    </div>
+    <div class="visible_field">
+      <%= label :contact, :position, "Position *" %><br />
+      <%= text_field :contact, :position, :name => "contact_us_position" %>
+    </div>
+    <%= submit_tag 'Submit', :class => "big_orange_submit contact_submit", :title => "Submit Your Message to HealthCare Insight" %>
+  <% end %>
+</div>

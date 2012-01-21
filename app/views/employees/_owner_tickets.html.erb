@@ -1,0 +1,31 @@
+<h2>My Tickets</h2>
+<% if owner_tickets != nil %>
+<% unless overdue_tickets.blank? %>
+ <h5>My Current OVERDUE tickets - <%= overdue_tickets.size %></h5>
+   <ul class="ticket_list">
+     <% overdue_tickets.each do |ticket| %>
+       <li>
+         <%= link_to "#{ticket.subject}", ticket_path(ticket) %> - <small class="red"><b>Opened:</b> <%= (ticket.created_at).to_s(:long) %> - OVERDUE!</small>
+       </li>
+     <% end %>
+   </ul>
+ <% end %>
+<h5>Current Open Ticket Count - <%= owner_tickets.size %></h5>
+  <ul class="ticket_list">
+    <% owner_tickets.each do |ticket| %>
+      <li>
+        <%= link_to "#{ticket.subject}", ticket_path(ticket) %> - <small><b>Opened:</b> <%= (ticket.created_at).to_s(:long) %> | <span class="<%= ticket.priority.priority_type %>"> Status: <%= ticket.priority.priority_name %></span> | <span class="<%= ticket.ticket_status.status_type %>"> Status: <%= ticket.ticket_status.status_name %></span></small>
+      </li>
+    <% end %>
+  </ul>
+  <% unless complete_tickets.blank? %>
+  <h5>Current Tickets in Complete Status - <%= complete_tickets.size %></h5>
+    <ul class="ticket_list">
+      <% complete_tickets.each do |ticket| %>
+        <li><%= link_to "#{ticket.subject}", ticket_path(ticket) %> - <small><b>Opened:</b> <%= (ticket.created_at).to_s(:long) %></small> | <span class="<%= ticket.priority.priority_type %>"> Status: <%= ticket.priority.priority_name %></span> | <span class="<%= ticket.ticket_status.status_type %>"> Status: <%= ticket.ticket_status.status_name %></span></li>
+      <% end %>
+    </ul>
+  <% end %>
+<% else %>
+  <p>You currently have 0 open tickets</p>
+<% end %>

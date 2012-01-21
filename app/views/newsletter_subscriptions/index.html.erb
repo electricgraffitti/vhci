@@ -1,0 +1,40 @@
+<div id="newsletter_subscriptions_table_wrap" class="full_wrap">
+  <h1>Newsletter Subscriptions</h1>
+  <table id="newsletter_subscriptions_table">
+  <% @newsletter_subscriptions.each do |newsletter_subscription| %>
+    <tr>
+      <td><%=h newsletter_subscription.email %></td>
+      <% if newsletter_subscription.active_subscription == 0 %>
+      <td>Not Active</td>
+      <% else %>
+      <td>Active</td>
+      <% end %>
+      <td><%= link_to 'Edit', edit_newsletter_subscription_path(newsletter_subscription) %></td>
+      <td><%= link_to 'Delete', newsletter_subscription, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+  </table>
+</div>
+
+
+<script type="text/javascript">
+var myDataSource = new YAHOO.util.DataSource(YAHOO.util.Dom.get("newsletter_subscriptions_table"));
+myDataSource.responseType = YAHOO.util.DataSource.TYPE_HTMLTABLE;
+myDataSource.responseSchema = {
+    fields: [
+      {key:"Email Address"},
+      {key:"Currently Active"},
+      {key:"Edit"},
+      {key:"Delete"}
+    ]
+};
+
+var myColumnDefs = [
+  {key:"Email Address", sortable: true, width: 130},
+  {key:"Currently Active", sortable: true},
+  {key:"Edit"},
+  {key:"Delete"}
+];
+
+var myDataTable = new YAHOO.widget.DataTable("newsletter_subscriptions_table_wrap", myColumnDefs, myDataSource);
+</script>

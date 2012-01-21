@@ -1,0 +1,13 @@
+<p>
+  <b>Sender name:</b>
+  <%=h @friend_invite.sender_name %>
+</p>
+
+<p>
+  <b>Receiver email:</b>
+  <%=h @friend_invite.receiver_email %>
+</p>
+
+
+<%= link_to 'Edit', edit_friend_invite_path(@friend_invite) %> |
+<%= link_to 'Back', friend_invites_path %>

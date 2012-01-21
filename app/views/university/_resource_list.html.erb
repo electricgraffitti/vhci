@@ -1,0 +1,12 @@
+  <ul id="iu_index_list" class="side_20_wrap">
+    <% iuresources.each do |iur| %>
+    <li>
+      <%= link_to image_tag(iur.uni_res_avatar.url(:thumb), :alt => iur.title), uni_resource_path(iur) %>
+      <%= link_to "<h3>#{iur.title}</h3>", uni_resource_path(iur), :class => "index_center_header_link"%>
+      <p><%= iur.description %></p>
+    </li>
+    </li>
+    <% end %>
+    <li class="last">
+    </li>
+  </ul>

@@ -1,0 +1,18 @@
+<p>
+  <b>Title:</b>
+  <%=h @tutorial_video.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @tutorial_video.description %>
+</p>
+
+<p>
+  <b>Permalink:</b>
+  <%=h @tutorial_video.permalink %>
+</p>
+
+
+<%= link_to 'Edit', edit_tutorial_video_path(@tutorial_video) %> |
+<%= link_to 'Back', tutorial_videos_path %>

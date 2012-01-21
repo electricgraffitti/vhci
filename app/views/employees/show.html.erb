@@ -1,0 +1,15 @@
+<% page_title "#{@employee.fullname} "%>
+<div class="show_wrap grid_12 alpha omega">
+  <%= render :partial => 'employees/employee_base', :locals => {:employee => @employee} %>
+  <div class="clear"></div>
+  <%= render :partial => 'employees/employee_links', :locals => {:employee => @employee} %>
+  <div class="clear"></div>
+  <% if @employee == current_employee %>
+    <div class="ticket_dashboard grid_12 alpha omega">
+      <%= render :partial => 'employees/owner_tickets', :locals => {:owner_tickets => @owner_tickets, :complete_tickets => @complete_tickets, :overdue_tickets => @overdue_tickets} %>
+    </div>
+    <div class="ticket_dashboard grid_12 alpha omega">
+      <%= render :partial => 'employees/assigned_tickets', :locals => {:assigned_tickets => @assigned_tickets, :overdue_assigned_tickets => @overdue_assigned_tickets} %>
+    </div>
+  <% end %>
+</div>

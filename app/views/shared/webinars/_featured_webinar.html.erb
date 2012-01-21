@@ -1,0 +1,14 @@
+<h2 class="green">ClaimSaver Webinar Series</h2>
+<div class="claim_saver_wrap claim_saver_video_box">
+  <%= image_tag(webinar.video_thumb.url(:small)) %>
+</div>
+<div class="claim_saver_wrap claim_saver_content">
+  <h2 class="green"><%= webinar.title %></h2>
+  <p>
+    <%= webinar.description %>
+  </p>
+	<p>
+		<%#= link_to "Register Here", "http://www2.hcinsight.com/l/1492/2010-07-02/HJ31V" %>
+	</p>
+</div>
+<%= link_to "View More Webinars", claim_savers_path, :class => "resource_video_link" %>

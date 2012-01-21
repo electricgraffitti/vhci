@@ -1,0 +1,25 @@
+<div class="brochure grid_5">
+  <h4>Service Brochure</h4>
+      <%= f.fields_for :brochures do |brochure_form|%>
+        <p>
+          <%= brochure_form.label :title %><br />
+          <%= brochure_form.text_field :title %>
+        </p>
+        <p>
+          <%= brochure_form.label :description %><br />
+          <%= brochure_form.text_area :description, :rows => 5, :cols => 29 %>
+        </p>
+        <p>
+          <%= brochure_form.label :permalink %><br />
+          <%= brochure_form.text_field :permalink %>
+        </p>
+        <p>
+          <%= brochure_form.label :keywords %><br />
+          <%= brochure_form.text_field :keywords %>
+        </p>
+        <p>
+          <%= brochure_form.label :brochure, "Add Brochure" %><br />
+          <%= brochure_form.file_field :brochure, :size => 16 %>
+        </p>
+      <% end %>
+</div>

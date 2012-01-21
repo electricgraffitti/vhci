@@ -1,0 +1,27 @@
+<% page_title "Health Care Fraud Fighting Articles "%>
+<% meta_keywords("health care fraud prevention articles, health care fraud articles, health care fraud news")%>
+<% meta_description("Health Care fraud is a huge problem in America. HealthCare Insight provides articles and tools to keep you informed and educated") %>
+
+<% content_for :banner do %>
+  <%= render :partial => 'shared/banners/short_banner', :locals => {:page => "articles"} %>
+<% end %>
+
+<div class="full_row">
+  <div class="listed_items">
+    <h2 class="green">Fraud Articles</h2>
+    <%= render :partial => "shared/articles/index_article", :locals => {:articles => @articles} %>
+  </div>
+  <aside>
+    <%= render :partial => 'shared/sidebar/press_releases', :locals => {:objects => @press_releases} %>
+    <%= render :partial => 'shared/sidebar/events_list', :locals => {:objects => @events} %>
+    <%= render :partial => 'shared/sidebar/current_ad', :locals => {:ads => @advertisements} %>
+  </aside>
+</div>
+
+<% content_for :javascripts do %>
+  <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+      app.ctaArrows();
+    });
+  </script>
+<% end %>

@@ -1,0 +1,26 @@
+<% page_title "Health Care Tutorial Videos "%>
+<% meta_keywords("health care fraud prevention videos, health care fraud videos, fraud awareness videos")%>
+<% meta_description("Health Care tutorial videos for HealthCare Insight Fraud Detection Software Systems") %>
+
+<% content_for :banner do %>
+  <%= render :partial => "tutorial_videos/banner" %>
+<% end %>
+
+<!-- Render Helper Module Here -->
+<div class="grid_8 top_10_wrap">
+  <h3 class="orange">Tutorial Videos</h3>
+  <div id="video_playlist"> 
+  <%= render :partial => "tutorial_videos/index_video", :locals => {:videos => @tutorial_videos} %>
+  </div>
+  <!-- element that is overlayed, visuals are done with external CSS --> 
+</div>
+<div class="grid_4 alpha omega right top_10_wrap">
+  <%= render :partial => 'resources/resource_press_releases', :locals => {:objects => @press_releases} %>
+  <%= render :partial => 'events/events_list', :locals => {:objects => @events} %>
+  <%= render :partial => 'articles/current_ad', :locals => {:ads => @advertisements} %>
+</div>
+<div id="video_div" class="overlay">
+    <!-- flowplayer container --> 
+    <div id="player"></div>
+</div>
+<%= javascript_include_tag 'index_videos' %>

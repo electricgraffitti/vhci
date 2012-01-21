@@ -1,0 +1,22 @@
+<h1>Listing friend_invites</h1>
+
+<table>
+  <tr>
+    <th>Sender name</th>
+    <th>Receiver email</th>
+  </tr>
+
+<% @friend_invites.each do |friend_invite| %>
+  <tr>
+    <td><%=h friend_invite.sender_name %></td>
+    <td><%=h friend_invite.receiver_email %></td>
+    <td><%= link_to 'Show', friend_invite %></td>
+    <td><%= link_to 'Edit', edit_friend_invite_path(friend_invite) %></td>
+    <td><%= link_to 'Destroy', friend_invite, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New friend_invite', new_friend_invite_path %>

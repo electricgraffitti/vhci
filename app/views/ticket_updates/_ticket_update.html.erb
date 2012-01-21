@@ -1,0 +1,44 @@
+<div id="ticket_form" class="grid_10">
+  <h2 class="margin_top_20">Submit Update</h2>
+
+<% form_for(ticket_update, :html => {:multipart => true}) do |f| %>
+  <%= f.error_messages %>
+  <div class="grid_6 alpha">
+    <%= f.hidden_field :ticket_id, :value => ticket.id %>
+    <%= f.hidden_field :employee_id, :value => current_employee.id %>
+    <p>
+      <%= f.label :comment, "Ticket Update" %><br />
+      <%= f.text_area :comment, :rows => 5, :cols => 50 %>
+    </p>
+    
+    <div class="upload_div">    
+      <p class="upload_field">
+        <% for asset in ticket_update.ticket_assets %>
+          <% fields_for "ticket_update[attachments][]", asset do |asset_form|%>
+            <%= asset_form.label "Attachment" %><br />
+            <%= asset_form.file_field :attachment, :size => 16 %><br/>
+          <% end %>
+        <% end %>
+      </p>
+    </div>
+   </div>
+  <div class="grid_3 alpha">
+    <% f.fields_for ticket do |t|%>
+    <p>
+      <%= t.label :ticket_status_id, "Update Ticket Status" %><br />
+      <% if ticket.employee == current_employee %>
+        <%= collection_select(:ticket, :ticket_status_id, TicketStatus.owner_update, :id, :status_name)%><br/>
+        <%= t.label :ticket_status_id, "Update Priority Status" %><br />
+        <%= collection_select(:ticket, :priority_id, Priority.all, :id, :priority_type)%><br/>
+      <% else %>
+        <%= collection_select(:ticket, :ticket_status_id, TicketStatus.contributor_update, :id, :status_name)%>
+      <% end %>
+    </p>
+    <% end %>
+  </div>
+  <div class="clear"></div>
+  <p class="margin_top_20">
+    <%= f.submit 'Submit Update' %>
+  </p>
+<% end %>
+</div>

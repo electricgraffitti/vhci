@@ -1,0 +1,48 @@
+<% meta_keywords("public health care sector, public health care fraud, public sector insurance payor, public sector cliams payment software")%>
+<% meta_description("HCI provides public sector claims payors with a suite of validated fraud services to maximize claims accuracy. Medicaid, Medicare Advantage, SCHIP") %>
+<% page_title("Public Health Care Sector Fraud Prevention Services") %>
+
+<% content_for :banner do %>
+  <%= render :partial => 'shared/banners/short_banner', :locals => {:page => "private"} %>
+<% end %>
+
+<!-- Top Heading -->
+<div class="full_row combo_header">
+  <h2 class="thick_thin_header"><span>PRIVATE</span> Sector.</h2>
+  <p class="title_color">
+    We aren't just another vendor with just another product.<br/>
+    We're changing the private sector with better technology,<br/>
+    better clinicians, better service and better savings results.
+  </p>
+</div>
+<div class="secondary_full_row">
+  <div class="sector_content_left">
+    <p class="sub_titles">
+      Start paying your health care claims the right<br/>
+      way Stop fraud, eliminate waste and save<br/>
+      money with a total payment integrity solution.
+    </p>
+    <p>
+      We provide private sector claims payors (Health Plans, MCOs, TPAs, Taft-Hartley Funds, employer groups, etc.) with a comprehensive suite of clinically validated fraud, abuse and overpayment prevention services. Our web-based payment integrity solutions are designed to help you maximize payment accuracy, identify fraud and save money. With our advanced Code Validator Pro<sup>&reg;</sup> (rules-based) and Fraud Finder Pro<sup>&reg;</sup> (profiling) software systems, you get better technology. With validation by our experienced clinicians and investigators, you get better results.
+    </p>
+    <h3 class="left">Find out more</h3>
+    <ul>
+      <% @services.each do |s| %>
+      <li><%= link_to "#{s.acronym} Brochure", service_path(s) %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="sector_grids service_wrap">
+    <%= render :partial => 'shared/markets/private_sector_grid' %>
+  </div>
+</div>
+<%= render :partial => "shared/quotes/full_quote", :locals => {:quote => @quote} %>
+<%= render :partial => "shared/markets/public_grid" %>
+
+<% content_for :javascripts do %>
+  <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+      app.ctaArrows();
+    });
+  </script>
+<% end %>

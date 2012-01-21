@@ -1,0 +1,47 @@
+<h2 class="title title_color">HCI Advertisments</h2>
+  <table id="advertisements_table" class="display">
+    <thead>  
+      <tr>
+        <th>Title</th>
+        <th>Ad Type</th>
+        <th>Expiration</th>
+        <th>Active</th>
+        <th>Order</th>
+        <th>View</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @advertisements.each do |ad| %>
+        <tr>
+          <td><%=h ad.title %></td>
+          <td><%=h ad.ad_type %></td>
+          <td><%= ad.expiration_date %></td>
+          <% if ad.active %>
+            <td>active</td>
+          <% else %>
+            <td>inactive</td>
+          <% end %>
+          <td><%= ad.listed_order %></td>
+          <td><%= link_to 'View', advertisement_path(ad) %></td>
+          <td><%= link_to 'Update', edit_advertisement_path(ad) %></td>
+          <td><%= link_to 'Delete', ad, :confirm => 'Are you sure?', :method => :delete %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to 'New Advertisement', new_advertisement_path %>
+
+  <% content_for :javascripts do %>
+    <script type="text/javascript" charset="utf-8">
+      $(document).ready(function() {
+        admin.employeeEdit();
+        admin.datePickers();
+        admin.dataTables();
+        admin.thirdPartyUrlToggle();
+        admin.multipleUploads();
+      });
+    </script>
+  <% end %>

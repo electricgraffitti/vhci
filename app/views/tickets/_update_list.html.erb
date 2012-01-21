@@ -1,0 +1,18 @@
+<h3 class="margin_top_20 grid_10">Ticket Updates</h3>
+<% updates.each do |ticket_update| %>
+  <div class="grid_10">
+    <p>
+      <%= ticket_update.comment %> 
+        <% unless ticket_update.ticket_assets.blank? %>
+        <% ticket_update.ticket_assets.each do |asset| %>
+          <div class="inline">
+            <small><%= link_to( asset.attachment_file_name, ('/ticket_uploads/' + asset.id.to_s + '/original_' + asset.attachment_file_name)) %></small>
+          </div><br/>
+          <% end %>
+        <% end %>
+      - <small class="orange">Submitted By <%= ticket_update.employee.fullname %> on <%= (ticket_update.created_at).to_s(:long) %></small>
+    </p>
+  </div>
+<% end %>
+<div class="clear"></div>
+<div class="grid_10 margin_top_20"><%= will_paginate updates %></div>

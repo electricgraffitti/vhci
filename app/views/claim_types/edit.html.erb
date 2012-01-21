@@ -1,0 +1,16 @@
+<h1>Editing claim_type</h1>
+
+<%= form_for(@claim_type) do |f| %>
+  <%= render :partial => "shared/error_block", :locals => {:object => f} %>
+
+  <p>
+    <%= f.label :claim_type %><br />
+    <%= f.text_field :claim_type %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @claim_type %> |
+<%= link_to 'Back', claim_types_path %>

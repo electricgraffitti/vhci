@@ -1,0 +1,9 @@
+<div class="popup_box">
+  <div class="text_logo">
+    <h2><%= serv.stripped_title %><sup>&reg;</sup></h2>
+    <h3 class="<%= serv.set_acronym %>">INSIGHT</h3>
+  </div>
+  <p class="<%= serv.permalink %>_index_text"><%= serv.meta_description %></p>
+  <%= link_to "#{serv.title}", service_path(serv), :class => "#{serv.permalink}_index_wrap service_avatar #{serv.claim_type.claim_type}" %>
+  <%= link_to "Learn More >", service_path(serv), :class => "right" %>
+</div>

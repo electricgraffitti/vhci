@@ -1,0 +1,66 @@
+<%= form_for(@employee, :html => {:multipart => true}) do |f| %>
+  <%= render :partial => "shared/error_block", :locals => {:object => f} %>
+  <div class="grid_5">
+    <h4>Employee Authentication</h4>
+    <p>
+      <%= f.label :username %><br />
+      <%= f.text_field :username %>
+    </p>
+    <p>
+      <%= f.label :password %><br />
+      <%= f.password_field :password %>
+    </p>
+    <p>
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation %>
+    </p>
+  </div>
+  <div class="grid_5">
+    <h4>Employee Information</h4>
+    <p>
+      <%= f.label :first_name %><br />
+      <%= f.text_field :first_name %>
+    </p>
+    <p>
+      <%= f.label :last_name %><br />
+      <%= f.text_field :last_name %>
+    </p>
+    <p>
+      <%= f.label :email %><br />
+      <%= f.text_field :email %>
+    </p>
+    <p>
+      <%= f.label :avatar, "Employee Picture" %><br/>
+      <%= f.file_field :avatar, :size => 16 %>
+    </p>
+  </div>
+  <div class="grid_5">
+    <p>
+      <%= f.label "Employee Department" %><br />
+      <%= collection_select(:employee, :department_id, Department.all, :id, :name)%>
+    </p>
+    <p>
+      <%= f.label :ext, "Phone Extension"%><br />
+      <%= f.text_field :ext %>
+    </p>
+    <p>
+      <%= f.label :home_phone %><br />
+      <%= f.text_field :home_phone %>
+    </p>
+    <p>
+      <%= f.label :cell_phone %><br />
+      <%= f.text_field :cell_phone %>
+    </p>
+    <p>
+      <%= f.label :home_fax %><br />
+      <%= f.text_field :home_fax %>
+    </p>
+    <p>
+      <%= f.label "Employee Role" %><br />
+      <%= collection_select(:employee, :role_id, Role.all, :id, :name)%>
+    </p>
+  </div>
+  <p>
+    <%= f.submit 'Submit' %>
+  </p>
+<% end %>

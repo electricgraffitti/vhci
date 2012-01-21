@@ -1,0 +1,16 @@
+<h2 class="green">Videos</h2>
+<div class="resource_video_wrapper">
+  <div id="resource_video_player">
+  </div>
+  <div id="playlist"> 
+    <% @videos.each do |video| %>
+    <div class="video_playlist_item">
+      <%= image_tag("#{video.video_thumb.url(:thumb)}") %>
+      <%= link_to "", video.video.url %>
+      <div class='video_title'><%= video.title %></div>
+      <div class='video_description'><%= video.description %></div>
+    </div>
+    <% end %>
+  </div>
+  <%= link_to "View More Videos", videos_path, :class => "resource_video_link" %>
+</div>

@@ -1,0 +1,37 @@
+<% page_title "HealthCare Insight University Resources"%>
+<%# meta_keywords("Health care w")%>
+<% meta_description("HealthCare Insight webinars, whitepapers, and instruction videos help you gain a better knowledge.") %>
+
+<% content_for :banner do %>
+  <div id="inner_banner_short" class="grid_12 alpha omega ">
+    <div id="banner1">
+      <%= image_tag "insight_university/headers/resources.png", :alt => "HealthCare Insight University Resources" %>
+    </div>
+  </div>
+<% end %>
+<div class="bd_fade_seperator"></div>
+<%# This is the main content area  %>
+<div class="grid_8">
+<%= render :partial => 'university/resource_list', :locals => {:iuresources => @iuresources} %>
+</div>
+<div class="iu_sidebar">
+  <ul>
+    <li>
+      
+    </li>
+    <li>
+      
+    </li>
+    <li>
+      
+    </li>
+    <li>
+      
+    </li>
+  </ul>
+</div>
+<%#= render :partial => 'university/index_scroller' %>
+
+<% content_for :sub_boxes do %>
+  <%= render :partial => 'university/iu_sub_boxes_4' %>
+<% end %>

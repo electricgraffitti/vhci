@@ -1,0 +1,37 @@
+<% meta_keywords("healthcare insight partners, fraud fighting partners")%>
+<% meta_description("HealthCare Insight strategic partners Leavitt Group, The Assist Group, Biologics, Qmedix and various others helping minimize your claims fraud and waste.") %>
+<% page_title("HealthCare Insight Partners") %>
+
+<% content_for :banner do %>
+  <%= render :partial => 'shared/banners/short_banner', :locals => {:page => "partner"} %>
+<% end %>
+
+<div class="full_row combo_header">
+  <h2 class="thick_thin_header"><span>SERVICE</span> Partners.</h2>
+  <p class="title_color">
+    They say you’re only as good as the company you keep.<br/>
+  </p>
+</div>
+
+<div class="gray_box">
+  <%= render :partial => 'shared/partners/partners_grid' %>
+</div>
+
+<div class="full_row combo_header">
+  <h2 class="thick_thin_header"><span>MEET THE HCI</span> Family.</h2>
+  <p class="title_color">
+    From fraud detection to decision support analytics, our<br/>
+    family is here to serve your business needs. We help you<br/>
+    define and mitigate risk. End result? You save money.
+  </p>
+</div>
+
+<%= render :partial => "shared/partners/associate_grid" %>
+
+<% content_for :javascripts do %>
+  <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+      app.ctaArrows();
+    });
+  </script>
+<% end %>

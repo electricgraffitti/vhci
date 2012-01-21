@@ -1,0 +1,55 @@
+<%= form_for(@link, :html => {:multipart => true }) do |f| %>
+  <%= render :partial => "shared/error_block", :locals => {:object => f} %>
+
+<div class="grid_5">
+  <h4>Link Content</h4>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description, :rows => 5, :cols => 28 %>
+  </p>
+  <p>
+    <%= f.label :link_url %><br />
+    <%= f.text_field :link_url %>
+  </p>
+  <p>
+    <% for asset in @link.assets %>
+    <% fields_for "link[attachments][]", asset do |asset_form|%>
+    <%= asset_form.label "Avatar" %><br />
+    <%= asset_form.file_field :attachment, :size => 16 %>
+    <% end %>
+    <% end %>
+  </p>
+  <p>
+    <% f.fields_for :coverflows do |cover_form|%>
+    <%= cover_form.label "Add Cover Flow" %><br />
+    <%= cover_form.file_field :cover, :size => 16 %>
+    <% end %>
+  </p>
+</div>
+<div class="grid_5">
+  <h4>Link SEO</h4>
+  <p>
+    <%= f.label :meta_description %><br />
+    <%= f.text_area :meta_description, :rows => 5, :cols => 28 %>
+  </p>
+  <p>
+    <%= f.label :keywords %><br />
+    <%= f.text_field :keywords %>
+  </p>
+  <p>
+    <%= f.label :permalink %><br />
+    <%= f.text_field :permalink %>
+  </p>
+</div>
+<div class="clear"></div>
+<div class="grid_5"
+  <p>
+    <%= f.submit 'Submit', :class => "btn" %>
+    <%= link_to "Back", request.env["HTTP_REFERER"], :class => "btn" %>
+  </p>
+</div>
+<% end %>

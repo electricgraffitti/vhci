@@ -1,0 +1,23 @@
+<div class="directory_header grid_12">
+  <h1 class="grid_10">HealthCare Insight Employee Directory</h1> <% if super_user? %> <%= link_to 'New employee', new_employee_path, :class => 'heading_adjacent_link' %> <% end %>
+</div>
+<div class="clear"></div>
+<div id="hciEmployeeDirectory" class="yui-dt grid_12">
+  <div class="yui-dt-mask" style="display: none;"/> 
+    <table id="employeeTable">
+    <% @employees.each do |employee| %>
+      <tr>
+        <td><%=h employee.first_name %></td>
+        <td><%=h employee.last_name %></td>
+        <td><%=h employee.department.name %></td>
+        <td><%=h employee.ext %></td>
+        <td><%=h employee.home_phone %></td>
+        <td><%=h employee.cell_phone %></td>
+        <td><%=h employee.home_fax %></td>
+        <td><%= link_to 'View Profile', employee %></td>
+      </tr>
+    <% end %>
+    </table>
+  </div>
+</div>
+<div class="clear"></div>

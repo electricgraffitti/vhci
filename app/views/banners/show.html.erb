@@ -1,0 +1,42 @@
+<div class="full_20_wrap">
+  <div class="grid_6 alpha">
+    <p>
+      <b>Headline:</b>
+      <%=h @banner.headline %>
+    </p>
+
+    <p>
+      <b>Content:</b>
+      <%=h @banner.content %>
+    </p>
+    <p>
+      <b>Secondary banners:</b>
+      <%=h @banner.secondary_banners %>
+    </p>
+    <p>
+      <b>Button Url:</b>
+      <%=h @banner.button_url %>
+    </p>
+    <p>
+      <b>Button Color:</b>
+      <%=h @banner.button_color %>
+    </p>
+    <p>
+      <b>Button Position:</b>
+      <%=h @banner.button_position %>
+    </p>
+    <p>
+      <b>Current Activity:</b>
+      <% if @banner.active_banner %>
+        <span class="active">Active</span>
+      <% else %>
+        <span class="inactive">Inactive</span>
+      <% end %>
+    </p>
+    <%= link_to 'Edit', edit_banner_path(@banner) %> |
+    <%= link_to 'Back', admin_banners_path %>
+  </div>
+  <div class="grid_5 omega">
+    <%= image_tag(@banner.banner.url(:micro), :alt => "#{@banner.headline}" ) %>
+  </div>
+</div>

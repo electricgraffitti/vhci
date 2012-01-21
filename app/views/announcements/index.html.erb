@@ -1,0 +1,30 @@
+<% meta_keywords("health care fraud prevention articles")%>
+<% meta_description("HealthCare Insight provides many resources to help you combat health care fraud.") %>
+<% page_title("Health Care Press ") %>
+
+<% content_for :banner do %>
+  <%= render :partial => "health_care/inner_banners" %>
+  <%= render :partial => "health_care/banner_side_box" %>
+<% end %>
+
+<% content_for :sub_boxes do %>
+  <%#= render :partial => 'layouts/sub_boxes' %>
+<% end %>
+
+<div class="index_list">
+  <h2><%= link_to "HCI Articles", articles_path(:article_type => "hci_article")  %></h2>
+<%= render :partial => "articles/index_article", :locals => {:articles => @articles} %>
+</div>
+<div class="index_list">
+  <h2><%= link_to "Third Party Articles", articles_path(:article_type => "third_party") %></h2>
+<%= render :partial => "articles/index_article", :locals => {:articles => @third_party_articles} %>
+</div>
+<div class="index_list">
+  <h2><%= link_to "Press Releases", articles_path(:article_type => "press_release") %></h2>
+<%= render :partial => "articles/index_article", :locals => {:articles => @press_releases} %>
+</div>
+<div class="index_list">
+  <h2><%= link_to "Events", events_path %></h2>
+<%= render :partial => "events/index_event", :locals => {:events => @events} %>
+</div>
+

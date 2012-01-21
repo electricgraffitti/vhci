@@ -1,0 +1,25 @@
+<% meta_keywords("health care fraud prevention services, health care fraud prevention services, health care fraud SaaS Solutions")%>
+<% meta_description("Maximize your health care claims payment accuracy, identify fraudulent providers and reduce your professional health care claims costs") %>
+<% page_title "Fraud Prevention Services"%>
+
+<% content_for :banner do %>
+  <%= image_tag "banners/service_index_banner.png", :alt => "HealthCare Insight Services" %>
+<% end %>
+
+<%= render :partial => "services/index_steps", :locals => {:service_inquiry => @service_inquiry} %>
+
+<div id="service_boxes" class="popup_wrap">
+  <% @services.each do |serv| %>
+    <%= render :partial => "services/index_service", :locals => {:serv => serv } %>
+  <% end %>
+</div>
+
+<% content_for :javascripts do %>
+  <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+      services.servicePopups();
+      services.serviceInquiry();
+      services.triggerServicePanel();
+    });
+  </script>
+<% end %>

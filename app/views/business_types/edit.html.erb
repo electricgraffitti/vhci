@@ -1,0 +1,16 @@
+<h1>Editing business_type</h1>
+
+<%= form_for(@business_type) do |f| %>
+  <%= render :partial => "shared/error_block", :locals => {:object => f} %>
+
+  <p>
+    <%= f.label :business_type %><br />
+    <%= f.text_field :business_type %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @business_type %> |
+<%= link_to 'Back', business_types_path %>

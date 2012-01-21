@@ -1,0 +1,5 @@
+<% page_title("New User ") %>
+
+<h1>New user</h1>
+<%= render :partial => "form", :locals => {:user => @user} %>
+<%= link_to 'Back', users_path %>

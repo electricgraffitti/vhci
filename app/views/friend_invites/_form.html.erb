@@ -1,0 +1,14 @@
+<%= form_for(@friend_invite) do |f| %>
+  <%= render :partial => "shared/error_block", :locals => {:object => f} %>
+  <div class="field">
+    <%= f.label :sender_name, "Your Name" %><br />
+    <%= f.text_field :sender_name %>
+  </div>
+  <div class="field">
+    <%= f.label :receiver_email, "Your Friend's Email" %><br />
+    <%= f.text_field :receiver_email %>
+  </div>
+  <div class="button_field">
+    <%= submit_tag "#{button_text}", :class => "big_black_submit", :title => "Submit Your Message to HealthCare Insight" %>
+  </div>
+<% end %>

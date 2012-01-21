@@ -1,0 +1,63 @@
+<p>
+  <b>Username:</b>
+  <%=h @student.username %>
+</p>
+
+<p>
+  <b>First name:</b>
+  <%=h @student.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%=h @student.last_name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @student.email %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%=h @student.phone %>
+</p>
+
+<p>
+  <b>Company:</b>
+  <%=h @student.company %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%=h @student.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%=h @student.state_id %>
+</p>
+
+<p>
+  <b>Zip:</b>
+  <%=h @student.zip %>
+</p>
+
+<p>
+  <b>Crypted password:</b>
+  <%=h @student.crypted_password %>
+</p>
+
+<p>
+  <b>Password salt:</b>
+  <%=h @student.password_salt %>
+</p>
+
+<p>
+  <b>Persistence token:</b>
+  <%=h @student.persistence_token %>
+</p>
+
+
+<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Back', students_path %>

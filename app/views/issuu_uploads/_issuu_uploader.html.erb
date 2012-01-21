@@ -1,0 +1,19 @@
+<%= form_tag(issuu_upload_path, :multipart => true ) do -%>
+  <%#= hidden_field_tag :action, "issuu.document.upload" %>
+  <%#= hidden_field_tag :apiKey, APP['issuu_key'] %>
+  <p>  
+    <%= label_tag "Upload to Issuu" %><br />
+    <%= file_field_tag :file, :size => 16 %>
+  </p>
+  <p>
+    <%= label_tag "Name" %><br/>
+    <%= text_field_tag :name %>
+  </p>
+  <p>
+    <%= label_tag "Description" %><br/>
+    <%= text_area_tag :description %>
+  </p>
+  <p>
+    <%= submit_tag "Upload" %>
+  </p>  
+<% end -%>

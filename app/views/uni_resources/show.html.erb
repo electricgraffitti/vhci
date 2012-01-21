@@ -1,0 +1,49 @@
+<% page_title "HealthCare Insight #{@uni_resource.title} Center"%>
+<%# meta_keywords("Health care w")%>
+<%# meta_description("HealthCare Insight webinars, whitepapers, and instruction videos help you gain a better knowledge.") %>
+
+<% content_for :banner do %>
+  <h2 id="iu_res_show_header"><%=h @uni_resource.title %> Center</h2>
+  <%= image_tag(@uni_resource.uni_res_avatar.url(:banner_tile), :alt => @uni_resource.title) %>
+  <%= render :partial => 'university/student_login' %>
+<% end %>
+
+<%# This is the Main Yield %>
+<div class="show_head">
+  <div class="<%= @uni_resource.permalink%>_service_top_stripe"></div>
+  <div class="<%= @uni_resource.permalink%>_service_bottom_stripe">
+    <h3><%= @uni_resource.title %> Educational Resources</h3>
+  </div>
+</div>
+<div class="left_column">
+  <h4>Service Resources</h4>
+  <ul>
+    <li>
+      <%= image_tag("insight_university/show_pages/video_icon.png", :class => "left") %>
+      <h5 class="left">Educational Videos</h5>
+    </li>
+    <li>
+      
+    </li>
+    <li>
+      
+    </li>
+  </ul>
+</div>
+<div class="right_column">
+  <h4>Recent Content</h4>
+</div>
+
+<% content_for :sidebar do %>
+  <div class="show_head">
+    <div class="<%= @uni_resource.permalink%>_service_top_stripe"></div>
+    <div class="<%= @uni_resource.permalink%>_service_bottom_stripe">
+      <h3>Insight U Certification</h3>
+    </div>
+  </div>
+  
+<% end %>
+
+<% content_for :sub_boxes do %>
+  <%= render :partial => 'university/iu_sub_boxes_4' %>
+<% end %>

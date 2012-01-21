@@ -1,0 +1,20 @@
+<h1>Listing claim_types</h1>
+
+<table>
+  <tr>
+    <th>Claim type</th>
+  </tr>
+
+<% @claim_types.each do |claim_type| %>
+  <tr>
+    <td><%=h claim_type.claim_type %></td>
+    <td><%= link_to 'Show', claim_type %></td>
+    <td><%= link_to 'Edit', edit_claim_type_path(claim_type) %></td>
+    <td><%= link_to 'Destroy', claim_type, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New claim_type', new_claim_type_path %>

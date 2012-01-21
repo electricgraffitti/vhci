@@ -1,0 +1,29 @@
+<td bgcolor="#FFFFFF" valign="top" width="400" style="font-size:12px;color:#000000;line-height:150%;font-family:trebuchet ms;">
+  <p>
+    <span style="font-size:20px;font-weight:bold;color:#55389d;font-family:arial;line-height:110%;">HCInsight.com :: Contact Request</span><br>
+     <ul>
+       <li>From: <%= @contact[:contact_us_contact_name] %></li>
+       <li>Email: <%= @contact[:contact_us_email] %></li>
+       <li>Business: <%= @contact[:contact_us_business_name] %></li>
+       <li>Title: <%= @contact[:contact_us_position] %></li>
+     </ul>
+     <br>
+     <br>
+     <span style="font-size:15px;font-weight:bold;color:#55389d;font-family:arial;line-height:110%;">Comment:</span><br>
+     <%= @contact[:contact_us_comment] %>
+     <br>
+     <br>
+     <span style="font-size:11px;font-weight:normal;color:#666666;font-style:italic;font-family:arial;">Generated at <%= @sent_on.to_s %></span><br>
+  </p>
+</td>
+<td width="200" valign="top" style="background-color:#FFFFFF;border-left:1px dashed #CCCCCC;text-align:left;">
+  <span style="font-size:11px;font-weight:normal;color:#999999;font-family:arial;line-height:150%;">
+
+  <!-- <span style="font-size:15px;font-weight:bold;color:#333333;font-family:arial;line-height:150%;">Contact Interests:</span><br>
+    <ul>
+      <%# @contact[:contact][:interest].each do |interest| %>
+        <li><%#= interest %></li>
+      <%# end %>
+    </ul>
+   </span> -->
+</td>

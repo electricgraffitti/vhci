@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Service:</b>
+  <%= @quote.service_id %>
+</p>
+
+<p>
+  <b>Page:</b>
+  <%= @quote.page %>
+</p>
+
+<p>
+  <b>Line 1:</b>
+  <%= @quote.line_1 %>
+</p>
+
+<p>
+  <b>Line 2:</b>
+  <%= @quote.line_2 %>
+</p>
+
+<p>
+  <b>Line 3:</b>
+  <%= @quote.line_3 %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%= @quote.author %>
+</p>
+
+<p>
+  <b>Line count:</b>
+  <%= @quote.line_count %>
+</p>
+
+
+<%= link_to 'Edit', edit_quote_path(@quote) %> |
+<%= link_to 'Back', quotes_path %>

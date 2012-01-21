@@ -1,0 +1,8 @@
+<p>
+  <b>Status type:</b>
+  <%=h @ticket_status.status_type %>
+</p>
+
+
+<%= link_to 'Edit', edit_ticket_status_path(@ticket_status) %> |
+<%= link_to 'Back', ticket_statuses_path %>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+  <%= render :partial => "layouts/headmeta" %>
+</head>
+<body>
+  <!-- Application Layout -->
+  <div id="wrapper">
+    <%= render :partial => 'layouts/flash', :locals => {:flash => flash} %>
+	  <header class="clearfix">
+      <%= render :partial => "layouts/header" %>
+	  </header>
+    <div id="bd" class="clearfix">
+      <div id="banner" class="clearfix <%= @banner_size if @banner_size %>">
+        <%= yield :banner %>
+      </div>
+      <div class="main_content clearfix">
+        <%= yield %>
+      </div>
+      <div id="sub_boxes" class="clearfix">
+        <%= yield :sub_boxes %>
+      </div>
+    </div>
+    <footer class="clearfix">
+      <%= render :partial => "layouts/footer" %>
+    </footer>
+	</div>
+	<%= yield :overlays %>
+	<%= render :partial => "layouts/scripts" %>
+</body>
+</html>

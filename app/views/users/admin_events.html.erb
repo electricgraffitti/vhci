@@ -1,0 +1,44 @@
+<h2 class="title title_color">Events</h2>
+  <% unless @events.empty? %>
+  <table id="events_table" class="display">
+    <thead>  
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>View Product</th>
+        <th>Edit Product</th>
+        <th>Delete Product</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @events.each do |s| %>
+      <% if s %>
+        <tr>
+          <td><%=h s.title %></td>
+          <td><%= truncate(s.description, :length => 250) %></td>
+          <td><%= link_to 'View Event', event_path(s) %></td>
+          <td><%= link_to 'Update Event', edit_event_path(s) %></td>
+          <td><%= link_to 'Delete Event', s, :confirm => 'Are you sure?', :method => :delete %></td>
+        </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+  <% else %>
+  No Events<br/>
+  <% end %>
+  <%= link_to 'New Event', new_event_path %>
+
+
+  <% content_for :javascripts do %>
+    <script type="text/javascript" charset="utf-8">
+      $(document).ready(function() {
+        admin.employeeEdit();
+        admin.datePickers();
+        admin.dataTables();
+        admin.thirdPartyUrlToggle();
+        admin.multipleUploads();
+      });
+    </script>
+  <% end %>

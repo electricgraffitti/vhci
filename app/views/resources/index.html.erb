@@ -1,0 +1,33 @@
+<% meta_keywords("health care resources, health care fraud fighting resources, fraud fighting tools, health care fraud prevention tools")%>
+<% meta_description("HealthCare Insight provides many resources and tools to help you combat health care fraud.") %>
+<% page_title("Health Care Resources ") %>
+
+<% content_for :banner do %>
+  <%= render :partial => 'shared/banners/short_banner', :locals => {:page => "resources"} %>
+<% end %>
+
+<div class="full_row">
+  <%= render :partial => 'shared/resources/resource_brochures', :locals => {:documents => @documents} %>
+</div>
+<div class="gray_box">
+  <%= render :partial => 'shared/resources/resource_videos' %>
+</div>
+<div class="gray_box">
+  <%= render :partial => 'shared/webinars/featured_webinar', :locals => {:webinar => @webinar} %>
+</div>
+<div class="full_row">
+  <%= render :partial => 'shared/resources/resource_articles', :locals => {:objects => @articles} %>
+  <aside>
+    <%= render :partial => 'shared/sidebar/press_releases', :locals => {:objects => @press_releases} %>
+    <%= render :partial => 'shared/sidebar/events_list', :locals => {:objects => @events} %>
+  </aside>
+</div>
+
+<% content_for :javascripts do %>
+  <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+      app.ctaArrows();
+      videos.resourceVideos();
+    });
+  </script>
+<% end %>

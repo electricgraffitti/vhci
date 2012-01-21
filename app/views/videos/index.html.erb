@@ -1,0 +1,35 @@
+<% page_title "Health Care Fraud Videos "%>
+<% meta_keywords("health care fraud prevention videos, health care fraud videos, fraud awareness videos")%>
+<% meta_description("Health Care fraud is a huge problem in America. HealthCare Insight provides videos to keep you informed and educated about the growing problem") %>
+
+<% content_for :banner do %>
+  <%= render :partial => 'shared/banners/short_banner', :locals => {:page => "videos"} %>
+<% end %>
+
+<div class="full_row">
+  <div class="listed_items">
+    <h2 class="green">Fraud Videos</h2>
+    <%= render :partial => "shared/videos/video_list", :locals => {:videos => @videos} %>
+  </div>
+  <aside>
+    <%= render :partial => 'shared/sidebar/press_releases', :locals => {:objects => @press_releases} %>
+    <%= render :partial => 'shared/sidebar/events_list', :locals => {:objects => @events} %>
+    <%= render :partial => 'shared/sidebar/current_ad', :locals => {:ads => @advertisements} %>
+  </aside>
+</div>
+
+<% content_for :overlays do %>
+  <div id="video_div" class="overlay">
+    <div class="close"></div>
+    <div id="player"></div>
+  </div>
+<% end %>
+
+<% content_for :javascripts do %>
+  <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+      app.ctaArrows();
+      videos.indexBannerVideos();
+    });
+  </script>
+<% end %>

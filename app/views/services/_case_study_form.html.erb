@@ -1,0 +1,25 @@
+<div class="case_study grid_5">
+  <h4>Service Case Study</h4>
+      <%= f.fields_for :case_studies do |case_study_form|%>
+        <p>
+          <%= case_study_form.label :title %><br />
+          <%= case_study_form.text_field :title %>
+        </p>
+        <p>
+          <%= case_study_form.label :description %><br />
+          <%= case_study_form.text_area :description, :rows => 5, :cols => 29 %>
+        </p>
+        <p>
+          <%= case_study_form.label :permalink %><br />
+          <%= case_study_form.text_field :permalink %>
+        </p>
+        <p>
+          <%= case_study_form.label :keywords %><br />
+          <%= case_study_form.text_field :keywords %>
+        </p>
+        <p>
+          <%= case_study_form.label :case_study, "Add Case Study" %><br />
+          <%= case_study_form.file_field :case_study, :size => 16 %>
+        </p>
+      <% end %>
+</div>

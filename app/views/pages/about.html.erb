@@ -1,0 +1,45 @@
+<% meta_keywords("healthcare insight management, healthcare insight history, healthcare insight leadership")%>
+<% meta_description("Get to know the people behind HealthCare Insight. ") %>
+<% page_title("About Our Company") %>
+
+<% content_for :banner do %>
+  <%= render :partial => 'shared/banners/short_with_video', :locals => {:page => "about"} %>
+<% end %>
+
+
+  <%= render :partial => "shared/about/about_boxes" %>
+  <%= render :partial => "shared/quotes/full_quote", :locals => {:quote => @quote} %>
+  <%= render :partial => 'shared/about/column_headers' %>
+  
+  <div class="full_row">
+    <%= render :partial => 'shared/about/management_profiles' %>
+    <%= render :partial => 'shared/about/milestones' %>
+  </div>
+  
+  <div class="secondary_full_row combo_header about_work">
+    <h2 class="thick_thin_header"><span>COME TO WORK AT</span> HCI.</h2>
+    <p class="title_color">
+      Experienced Professionals<br/>
+      Changing the Health Care Industry..
+    </p>
+  </div>
+  
+  <div class="gray_box thin job_board">
+    <%= render :partial => "shared/about/job_board" %>
+  </div>
+
+
+<% content_for :overlays do %>
+  <div id="video_div" class="overlay overlay-large">
+    <div class="close"></div>
+    <div id="player"></div>
+  </div>
+<% end %>
+
+<% content_for :javascripts do %>
+  <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+      videos.indexBannerVideos();
+    });
+  </script>
+<% end %>

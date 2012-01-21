@@ -1,0 +1,54 @@
+<h2 class="title title_color">Documents</h2>
+  <table id="documents_table" class="display">
+    <thead>  
+      <tr>
+        <th>Title</th>
+        <th>Type</th>
+        <th>On Issuu</th>
+        <th>Brochure</th>
+        <th>Brochure Order</th>
+        <th>View Product</th>
+        <th>Edit Product</th>
+        <th>Delete Product</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @documents.each do |s| %>
+        <tr>
+          <td><%=h s.title %></td>
+          <td><%=h s.document_type.document_type %></td>
+          <% if s.issuu_url.nil? %>
+          <td> </td>
+          <% else %>
+          <td>Yes</td>
+          <% end %>
+          
+          <% if s.brochure? %>
+          <td>Yes</td>
+          <td><%= s.brochure_order %></td>
+          <% else %>
+          <td> </td>
+          <td> </td>
+          <% end %>
+          <td><%= link_to 'View Document', document_path(s) %></td>
+          <td><%= link_to 'Update Document', edit_document_path(s) %></td>
+          <td><%= link_to 'Delete Document', s, :confirm => 'Are you sure?', :method => :delete %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to 'New Document', new_document_path %>
+
+
+<% content_for :javascripts do %>
+  <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+      admin.employeeEdit();
+      admin.datePickers();
+      admin.dataTables();
+      admin.thirdPartyUrlToggle();
+      admin.multipleUploads();
+    });
+  </script>
+<% end %>

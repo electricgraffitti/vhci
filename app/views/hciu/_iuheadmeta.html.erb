@@ -1,0 +1,21 @@
+<title><%= h(yield(:title) || "HealthCare University") %></title>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<meta name="description" content="<%= h(yield(:description) || "Health Care Fraud Protection and Detection Services") %>">
+<meta name="copyright" content="Copyright 2009 HCI an Verisk Health Company">
+<meta name="title" CONTENT="HealthCare Insight University">
+<link ref="shortcut icon" href="favicon.ico"   type="image/ico" />
+<%#= auto_discovery_link_tag(type = :atom, services_url(:atom)) %>
+
+<%#= ******** CSS ********** %>
+<%= stylesheet_link_tag 'reset-fonts-grids', 'jquiwidgets', '960', 'alerts/jquery.alerts', :cache => true %>
+<%= stylesheet_link_tag 'insightu' %>
+<!--[if IE ]>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/IE.css" />
+<![endif]-->
+
+<!--[if lt IE 7]>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/IE6.css" />
+<![endif]-->
+
+<%#= ******** JAVASCRIPTS ********** %>
+<%= javascript_include_tag 'jquery', 'jqtools', 'jqui', 'jquery.livequery', 'jquery.easing', 'jQueryTimer', 'jquery.alerts', 'jquery.validate','cube_crossfade', 'datatables', 'flowplayer', 'hci_validations', 'application', :cache => true %>

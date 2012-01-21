@@ -1,0 +1,44 @@
+<div id="grid">
+  <div class="inner_grid">
+    <div class="grid_box left_side_box odd_row">
+      <div class="brochure grid_image">
+        <%= link_to "Services Brochure", documents_path, :alt => "Download Services Brochure", :title => "Download Services Brochure"  %>
+      </div>
+      <div class="grid_content_wrap">      
+        <h3><%= link_to "View Service Brochure", documents_path, :alt => "Download Services Brochure", :title => "Download Services Brochure"  %></h3>
+        <p>Want more information? View and
+        download the service brochure.  
+        </p>
+      </div>
+    </div>
+    <div class="grid_box right_side_box odd_row">
+      <%= link_to raw("<div class='grid_image bene9'></div>"), media_path, :alt => "HealthCare Insight Resources" %>
+      <div class="grid_content_wrap">      
+        <h3><%= link_to "Read Success Stories", media_path, :alt => "HealthCare Insight Resources" %></h3>
+        <p>
+          Still need convincing? Read and download
+          customer case studies and testimonials.
+        </p>
+      </div>
+    </div>
+    <div class="grid_box left_side_box even_row last_row">
+      <%= link_to raw("<div class='grid_image bene10'></div>"), videos_path, :alt => "HealthCare Insight Videos" %>
+      <div class="grid_content_wrap">      
+        <h3><%= link_to "Watch Videos", videos_path, :alt => "HealthCare Insight Videos" %></h3>
+        <p>Rather watch a video? Check out our latest
+        webinars, tutorials and commercials. 
+        </p>
+      </div>
+    </div>
+    <div class="grid_box right_side_box even_row last_row">
+      <%= link_to raw("<div class='grid_image bene11'></div>"), APP['free_trial_landing_page'], :alt => "Free Cost Reduction Analysis" %>
+      <div class="grid_content_wrap">      
+        <h3><%= link_to "Request Free Trial", APP['free_trial_landing_page'], :alt => "Free Cost Reduction Analysis" %></h3>
+        <p>Ready to take the next step? Request a
+        free trial and Cost Reduction Analysis. 
+        </p>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>

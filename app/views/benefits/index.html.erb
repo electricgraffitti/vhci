@@ -1,0 +1,89 @@
+<% meta_keywords("Dynamic claim and provider scoring, fraud filter algorithms, Real-time claims processing, Medical coding specialist")%>
+<% meta_description("HealthCare Insights SaaS solutions for fighting health care fraud, abuse and overpayment include over 3 million algorithms.") %>
+
+<% content_for :banner do %>
+  <%= render :partial => 'shared/banners/short_banner', :locals => {:page => "benefits"} %>
+<% end %>
+
+<!-- Top Heading -->
+<div class="full_row combo_header">
+  <h2 class="thick_thin_header"><span>WHY YOU'LL</span> Like Us.</h2>
+  <p class="title_color">
+    We aren't just another vendor with just another product.<br/>
+    We're changing health care by providing better software,<br/>
+    better analytics, better service and better savings results.
+  </p>
+</div>
+
+<!-- Benefit Grid -->
+<%= render :partial => "shared/benefits/benefits_grid" %>
+
+
+<!-- Second Heading -->
+<div class="full_row combo_header">
+  <h2 class="thick_thin_header"><span>ELEMENTS OF</span> Success.</h2>
+  <p class="title_color">
+    Not all payment integrity solutions are created equal. At<br/>
+    HCI we believe that successful fraud, abuse and waste<br/>
+    prevention must include the following key ingredients:
+  </p>
+</div>
+
+<div class="full_row">
+  <div class="benefit_works_section">
+    <div class="benefit_work_box first">
+      <h3 class="benefit_sub_header"><span>Robust</span> Data Warehouse</h3>
+      <ul>
+        <li>25 million members ></li>
+        <li>1.3 million providers ></li>
+        <li>$90 billion paid claims ></li>
+        <li>450 million lines ></li>
+      </ul>
+      <div class="clear"></div>
+      <div class="benefit_icons robust_icon"></div>
+    </div>
+    <div class="benefit_work_box">
+      <h3 class="benefit_sub_header"><span>Advanced</span> Technology</h3>
+      <ul>
+        <li>Over 3 million algorithms ></li>
+        <!-- <li>Dynamic claim and provider scoring ></li> -->
+        <li>Dynamic scoring ></li>
+        <!-- <li>Customizable rules and parameters ></li> -->
+        <li>Customizable parameters ></li>
+        <li>Real-time claims processing ></li>
+      </ul>
+      <div class="clear"></div>
+      <div class="benefit_icons advanced_icon"></div>
+    </div>
+    <div class="benefit_work_box">
+      <h3 class="benefit_sub_header"><span>Clinical</span> Review</h3>
+      <ul>
+        <li>Medical coding specialists ></li>
+        <li>Clinical Investigative Unit (CIU) ></li>
+        <li>Physicians, nurses and dentists ></li>
+        <li>National clinical panel ></li>
+      </ul>
+      <div class="clear"></div>
+      <div class="benefit_icons clinical_icon"></div>
+    </div>
+    <div class="benefit_work_box">
+      <h3 class="benefit_sub_header"><span>Complete</span> Service</h3>
+      <ul>
+        <li>Account support team ></li>
+        <li>Dedicated clinical resources ></li>
+        <li>Ad hoc and custom reporting ></li>
+        <li>Appeal support and response ></li>
+      </ul>
+      <div class="clear"></div>
+      <div class="benefit_icons complete_icon"></div>
+    </div>
+  </div>
+</div>
+
+<% content_for :javascripts do %>
+  <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+      app.ctaArrows();
+    });
+  </script>
+<% end %>

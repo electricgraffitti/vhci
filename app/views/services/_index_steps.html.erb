@@ -1,0 +1,29 @@
+<div id="service_steps" class="full_row">
+  <div class="index_steps_description">  
+    <h2 class="green">The Wasted Buck Stops Here.</h2>
+    <p>
+      Need someone to stop fraud and waste before your money flies out the door? You’re in the right place. Each of our services ensures claims are paid right, every time. Find your service now.
+    </p>
+  </div>
+  
+  <%= form_for service_inquiry do |f| %>
+    <%#= render :partial => "shared/error_block", :locals => {:object => f} %>
+    <div class="number_steps left">
+      <div class="big_number left">1.</div>
+      <div class="number_header number_header_small green left">Your Business.</div>
+      <%= collection_select(:service_inquiry, :business_type_id, BusinessType.all, :id, :business_type, {:prompt => "Choose Option"})%>
+    </div>
+    <div class="number_steps left">
+      <div class="big_number left">2.</div>
+      <div class="number_header green left">Your Claims.</div>
+       <%= collection_select(:service_inquiry, :claim_type_id, ClaimType.all, :id, :claim_type, {:prompt => "Choose Option"})%>
+    </div>
+    <div class="number_steps left">
+      <div class="big_number left">3.</div>
+      <div class="number_header green left">Your Goals.</div>
+      <%= collection_select(:service_inquiry, :goal_type_id, GoalType.all, :id, :goal_type, {:prompt => "Choose Option"})%>
+    </div>
+    <div class="clear"></div>
+    <%= f.submit 'Find Solution', :class => "search_btn_green" %>
+  <% end %>
+</div>

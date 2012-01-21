@@ -1,0 +1,12 @@
+<%= form_for(@article_type) do |f| %>
+  <%= render :partial => "shared/error_block", :locals => {:object => f} %>
+<div class="grid_5">  <p>
+    <%= f.label :article_type %><br />
+    <%= f.text_field :article_type %>
+  </p>
+  <p>
+    <%= f.submit 'Submit', :class => "btn" %>
+    <%= link_to "Back", request.env["HTTP_REFERER"], :class => "btn" %>
+  </p>
+</div>
+<% end %>

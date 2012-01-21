@@ -1,0 +1,12 @@
+<div class="full_20_wrap left">
+  <div class="apple_sub_box ad_image">
+    <%= link_to(image_tag(adv.ad_image.url(:reg), :alt => adv.title), "#{adv.link_url}", :class => "advertisement_image") %>
+  </div>
+  <div class="ad_content">
+    <h3><%=h adv.title %></h3>
+    <div class="ad_description">
+      <%=h adv.description %>
+    </div>
+    <%= link_to "View More", "#{adv.link_url}", :alt => "#{adv.title}", :class => "left" %>
+  </div>
+</div>

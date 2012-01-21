@@ -1,0 +1,27 @@
+<%= form_for(@tutorial_video, :html => {:multipart => true}) do |f| %>
+  <%= render :partial => "shared/error_block", :locals => {:object => @tutorial_video} %>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description, :cols => 28, :rows => 5 %>
+  </p>
+  <p>
+    <%= f.label :permalink %><br />
+    <%= f.text_field :permalink %>
+  </p>
+  <p>
+    <%= f.label :tutorial_video, "Video File (flv or f4v)" %><br />
+    <%= f.file_field :tutorial_video %>
+  </p>
+  <p>
+    <%= f.label :tutorial_video_thumb, "Video Thumbnail (512x288)" %><br />
+    <%= f.file_field :tutorial_video_thumb %>
+  </p>
+  <p class="top_20_wrap">
+    <%= f.submit 'Submit' %>
+    <%= link_to 'Back', tutorial_videos_path %>
+  </p>
+<% end %>

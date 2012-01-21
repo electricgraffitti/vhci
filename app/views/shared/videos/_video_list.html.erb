@@ -1,0 +1,32 @@
+<% videos.each do |video| %>
+<div class='index_listing video'>
+  <% if video.third_party? %>
+    <%= link_to image_tag(video.video_thumb.url(:thumb), :alt => video.title), video.third_party_url, :target => "_blank", :class => "index_listing_image" %>
+  <% else %>
+    <%= link_to image_tag(video.video_thumb.url(:thumb), :alt => video.title), video.video.url, :class => "index_listing_image overlay_link", :rel => "div.overlay" %>
+  <% end %>
+  <h3><%= video.title %></h3>
+  <p><%= truncate(video.description, :length => 350) %></p>
+  <div class='widget_links'>
+    <% if video.third_party? %>
+      <%= link_to('Go To Site', video.third_party_url, :target => "_blank") %>
+    <% else %>
+      <%= link_to('Watch Video', video.video.url, :class => "overlay_link", :rel => "div.overlay") %>
+    <% end %>
+    <% if current_user %>
+    |
+    <%= link_to('New', new_video_path) %>
+    |
+    <%= link_to('Edit', edit_video_path(video)) %>
+    |
+    <%= link_to('Delete', video, :confirm => 'Are you sure?', :method => :delete) %>
+    <% end %>
+  </div>
+<div class='clear'></div>
+</div>
+<% end %>
+<% if videos.size > 4 %>
+<div class='index_listing'>
+  <%= will_paginate videos %>
+</div>
+<% end %>

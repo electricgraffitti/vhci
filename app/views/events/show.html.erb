@@ -1,0 +1,22 @@
+<% if @event.keywords
+  meta_keywords(@event.keywords)
+  end %>
+<% if @event.meta_description
+  meta_description(@event.meta_description)
+  end %>
+<% page_title "#{@event.title} " %>
+
+<% content_for :banner do %>
+  <%= render :partial => "events/banner" %>
+<% end %>
+
+<%# This is in the application helper %>
+<%= show_page_listing(@event) %>
+
+<div class="widget_links grid_3 omega right">
+<% if current_user %>
+  <%= link_to 'Edit', edit_event_path(@event) %> |
+  <%= link_to 'New', new_event_path %> |
+<% end %>
+<%= link_to "Back", request.env["HTTP_REFERER"] %>
+</div>

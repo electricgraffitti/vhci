@@ -1,0 +1,34 @@
+<% articles.each do |article| %>
+  <% unless article.article_type.article_type == "press_release"%>
+    <div class='index_listing'>
+      <% article.assets.each do |asset| %>
+        <% if article.third_party? %>
+          <%= link_to image_tag(asset.attachment.url(:thumb), :alt => article.title), article.third_party_url, :target => "_blank", :class => "index_listing_image" %>
+        <% else %>
+          <%= link_to image_tag(asset.attachment.url(:thumb), :alt => article.title), article_path(article), :class => "index_listing_image" %>
+        <% end %>
+      <% end %>
+      <h3><%= article.title %></h3>
+      <%= truncate(article.description, :length => 350) %>
+      <div class='widget_links'>
+        <% if article.third_party? %>
+          <%= link_to('Read More', article.third_party_url, :target => "_blank") %>
+        <% else %>
+          <%= link_to('Read More', article_path(article)) %>
+        <% end %>
+        <% if current_user %>
+        |
+        <%= link_to('New', new_article_path) %>
+        |
+        <%= link_to('Edit', edit_article_path(article)) %>
+        |
+        <%= link_to('Delete', article, :confirm => 'Are you sure?', :method => :delete) %>
+        <% end %>
+      </div>
+      <div class='clear'></div>
+    </div>
+  <% end %>
+<% end %>
+<div class='index_listing'>
+  <%= will_paginate articles %>
+</div>

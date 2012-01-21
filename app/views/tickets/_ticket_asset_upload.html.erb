@@ -1,0 +1,10 @@
+<div class="upload_div">    
+  <p class="upload_field">
+  <% for asset in ticket.ticket_assets %>
+    <% fields_for "ticket[attachments][]", asset do |asset_form|%>
+      <%= asset_form.label "Attachment" %><br />
+      <%= asset_form.file_field :attachment, :size => 16 %><br/>
+    <% end %>
+  <% end %>
+</p>
+</div>

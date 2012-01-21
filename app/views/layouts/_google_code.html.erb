@@ -1,0 +1,43 @@
+<%# ********* GOOGLE CODE **********%>
+<%# Init GA %>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<%# Old HCI Account %>
+<script type="text/javascript">
+var oldHCITracker = _gat._getTracker("UA-3353556-1");
+oldHCITracker._initData();
+oldHCITracker._trackPageview(); </script>
+
+<%# You can pass params and vars into the _trackPageview() method. you can also call _trackPageviews() more than once%>
+
+<%# This is the NEW GOOGLE account with SHCF, Profiler and HCI on it %>
+<script type="text/javascript">
+try {
+var hciTracker = _gat._getTracker("UA-10134512-3");
+hciTracker._trackPageview();
+} catch(err) {}</script>
+
+<%# c2 Tracker %>
+<script type="text/javascript">
+try {
+var cubeTracker = _gat._getTracker("UA-12818029-1");
+cubeTracker._trackPageview();
+} catch(err) {}</script>
+
+<%# Pardot Tracker Code %>
+<script type="text/javascript">
+var piProtocol = (("https:" == document.location.protocol) ? "https://" : "http://");
+document.write(unescape("%3Cscript src='" + piProtocol + "pi.pardot.com/pi.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+	<!--
+		piAId = "2492";
+		piCId = "34861";
+		piHostname = "pi.pardot.com";
+
+		piTracker();
+	-->
+</script>

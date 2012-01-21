@@ -1,0 +1,29 @@
+<% meta_keywords("health care markets, health care payor types,  health care payor type fraud prevention")%>
+<% meta_description("HCI provides various market sector claims payors with a suite of clinically validated fraud services designed to maximize claims accuracy") %>
+<% page_title("Public Health Care Sector Fraud Prevention Services") %>
+
+<% content_for :banner do %>
+  <%= render :partial => 'shared/banners/short_banner', :locals => {:page => "markets"} %>
+<% end %>
+<div class="full_row">
+  <div class="page_description">  
+    <h2 class="green">Start Paying Right. Start Saving Money.</h2>
+    <p>
+      Unique markets provide unique challenges. That’s why we tailor our payment integrity solutions and services to fit your needs and goals. Learn more about our customized services and how clinical validation delivers better results. 
+    </p>
+  </div>
+  <%= render :partial => 'shared/quotes/small_quote', :locals => {:color => 'green', :quote => @quote} %>
+</div>
+<div id="market_popups" class="popup_wrap">
+  <%= render :partial => "shared/markets/market_popups" %>
+</div>
+<%= render :partial => "shared/markets/market_grid" %>
+
+<% content_for :javascripts do %>
+  <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+      app.ctaArrows();
+      markets.marketPopup();
+    });
+  </script>
+<% end %>

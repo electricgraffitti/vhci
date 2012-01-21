@@ -1,0 +1,10 @@
+<div class="nucleus_banner">
+  <% if document.issuu_url? %>
+  <div id="issuu_frame">
+   <iframe src="<%= document.issuu_url %>"></iframe>
+  </div>
+  <% end %>
+</div>
+<div class="full_row">
+  <%= render :partial => 'shared/resources/resource_brochures', :locals => {:documents => documents} %>
+</div>

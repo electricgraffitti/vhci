@@ -1,0 +1,20 @@
+<% articles.each do |article| %>
+<div class='grid_9 alpha omega'>
+  <% article.assets.each do |asset| %>
+    <div class='thumb_wrap'><%= link_to image_tag(asset.attachment.url(:thumb), :alt => article.title), article_path(article) %></div>
+  <% end %>
+  <div class='grid_7 omega'>
+    <h3><%= article.title %></h3>
+    <p><%= truncate(article.description, :length => 100) %></p>
+  </div>
+  <div class='clear'></div>
+  <div class='widget_links grid_9 alpha omega right'>
+    <%= link_to('Read More', article_path(article)) %>
+    <% if current_user %>
+      | <%= link_to('New', new_article_path) %> |
+      <%= link_to('Edit', edit_article_path(article)) %> |
+      <%= link_to('Delete', article, :confirm => 'Are you sure?', :method => :delete) %> 
+    <% end %>
+  </div>
+</div>
+<% end %>

@@ -1,0 +1,12 @@
+<% documents.each do |doc| %>
+  <div class="index_listing">
+    <% doc.coverflows.each do |coverflow| %>
+      <%= link_to image_tag(coverflow.cover.url(:brochure), :alt => doc.title), document_path(doc), :class => "index_listing_image" %>
+    <% end %>
+    <h3><%= link_to "#{doc.title}", document_path(doc)  %> | <%= link_to "Download", " #{doc.download_link}", :alt => "Download #{doc.title} Brochure" %></h3>
+    <p>
+      <%= doc.brochure_sub_heading %>
+    </p>
+    <div class="clear"></div>
+  </div>
+<% end %>

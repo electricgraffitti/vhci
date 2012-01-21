@@ -1,0 +1,14 @@
+<%= form_for(user_session, :html => {:class => "login_form"}) do |f| %>
+  <%= render :partial => "shared/error_block", :locals => {:object => user_session} %>
+  <div class="field">
+    <%= f.label :username %><br/>
+    <%= f.text_field :username %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br/>
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.submit "Login" %>
+  </div>
+<% end %>

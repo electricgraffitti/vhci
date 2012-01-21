@@ -1,0 +1,26 @@
+<%= form_for quote do |f| %>
+  <%= render :partial => "shared/error_block", :locals => {:object => quote} %>
+  <div class="field">
+    <%= f.collection_select(:page_id, Page.all, :id, :page_name, {:prompt => "Select a Page"}) %>
+  </div>
+  <div class="field">
+    <%= f.label :line_1, "Top Line" %><br />
+    <%= f.text_field :line_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :line_2, "Middle Line (leave blank for 2 line quote)"%><br />
+    <%= f.text_field :line_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :line_3, "Bottom Line" %><br />
+    <%= f.text_field :line_3 %>
+  </div>
+  <div class="field">
+    <%= f.label :author, "Author name and creds" %><br />
+    <%= f.text_field :author %>
+  </div>
+  <div class="field">
+    <%= f.submit %>
+    <%= link_to 'Back', admin_quotes_path %>
+  </div>
+<% end %>

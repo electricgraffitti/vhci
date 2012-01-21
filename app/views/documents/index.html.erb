@@ -1,0 +1,6 @@
+<% page_title "Health Care Documents"%>
+
+<%= render :partial => "index_document", :locals => {:documents => @documents}%>
+<div class="space_left">
+  <%= link_to "Back", request.env["HTTP_REFERER"], :class => "btn"%>
+</div>

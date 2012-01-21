@@ -1,0 +1,9 @@
+<% page_title("Admin Login ") %>
+
+<div class="full_row">
+  <h2 class="title title_color">Login</h2>
+    <%= render :partial => "form", :locals => {:user_session => @user_session} %>
+  <div class="widget_links">
+    <%= link_to 'Back', users_path %>
+  </div>
+</div>

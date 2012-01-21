@@ -1,0 +1,18 @@
+<% page_title "HealthCare Insight University "%>
+<%# meta_keywords("Health care w")%>
+<% meta_description("HealthCare Insight provides education on the tools and fraud prevention software to keep you informed and educated.") %>
+
+<% content_for :banner do %>
+  <%= render :partial => "university/banner" %>
+<% end %>
+
+<%# This is the main content area  %>
+<div class="grid_6">
+  <%= render :partial => 'university/index_center_list', :locals => {:iuresources => @iuresources} %>
+</div>
+<%= render :partial => 'university/index_scroller' %>
+
+<% content_for :sub_boxes do %>
+  <h2 class="page_header index_header full_wrap">Do you have a fraud problem? We have a Fraud Solution.</h2>
+  <%= render :partial => 'health_care/index_sub_boxes' %>
+<% end %>

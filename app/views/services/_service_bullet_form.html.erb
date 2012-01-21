@@ -1,0 +1,9 @@
+<div class="case_study grid_5">
+  <h4>Service Bullet Points</h4>
+    <%= f.fields_for :service_bullets do |sbullet|%>
+      <p>
+        <%= sbullet.label :bullet_point, "Service Bullet Point" %><br />
+        <%= sbullet.text_field :bullet_point %>
+      </p>
+    <% end %>
+</div>

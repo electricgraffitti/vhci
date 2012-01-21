@@ -1,0 +1,47 @@
+<td bgcolor="#FFFFFF" valign="top" width="400" style="font-size:12px;color:#000000;line-height:150%;font-family:trebuchet ms;">
+  <p>
+    <span style="font-size:20px;font-weight:bold;color:#55389d;font-family:arial;line-height:110%;">Ticket: <%=h @ticket.subject %></span><br>
+
+    <span style="font-size:11px;font-weight:normal;color:#666666;font-style:italic;font-family:arial;">Updated by: <%=h @owner.fullname %></span><br>
+      <%=h @update %>
+  </p>
+  <p>
+    <span style="font-size:15px;font-weight:bold;color:#55389d;font-family:arial;line-height:110%;">Original Ticket</span><br>
+    <span style="font-size:10px;font-weight:normal;color:#666666;font-style:italic;font-family:arial;">owner: <%= @ticket.employee.fullname %></span><br>
+      <%= @ticket.description %>
+  </p>
+  <p>Login to view this ticket: <%= link_to "Employee Login", (SITE_URL + "/employee_login") %></p>
+</td>
+  <td width="200" valign="top" style="background-color:#FFFFFF;border-left:1px dashed #CCCCCC;text-align:left;">
+    <span style="font-size:11px;font-weight:normal;color:#999999;font-family:arial;line-height:150%;">
+
+    <span style="font-size:15px;font-weight:bold;color:#333333;font-family:arial;line-height:150%;">Due Date:</span><br>
+      <%=h @ticket.due_date %>
+    <br>
+    <br>
+    <span style="font-size:15px;font-weight:bold;color:#333333;font-family:arial;line-height:150%;">Current Status:</span><br>
+      <span class="<%= @status.status_type %>"><%=h @status.status_name %></span>
+    <br>
+    <br>
+    <span style="font-size:15px;font-weight:bold;color:#333333;font-family:arial;line-height:150%;">Priority Level:</span><br>
+     <span class="<%= @priority.priority_type %>"><%=h @priority.priority_name %></span>
+     <br>
+     <br>
+     <span style="font-size:15px;font-weight:bold;color:#333333;font-family:arial;line-height:150%;">Assigned To:</span><br>
+      <ul>
+        <% @employees.each do |employee| %>
+          <li><%=h employee.fullname %></li>
+        <% end %>
+      <ul>
+     </span>
+  </td>
+  
+  <% content_for :mailer_footer do %>
+    <td style="background-color:#333333;border-top:10px solid #FFFFFF;" valign="top" colspan="2">
+      <span style="font-size:10px;color:#ffffff;line-height:100%;font-family:verdana;">
+      HealthCare Insight internal ticket system
+        <br />
+        <br />
+      </span>
+    </td>
+  <% end %>

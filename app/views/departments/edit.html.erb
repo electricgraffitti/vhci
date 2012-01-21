@@ -1,0 +1,15 @@
+<h1>Editing department</h1>
+
+<%= form_for(@department) do |f| %>
+  <%= render :partial => "shared/error_block", :locals => {:object => f} %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @department %> |
+<%= link_to 'Back', departments_path %>

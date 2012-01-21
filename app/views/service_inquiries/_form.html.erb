@@ -1,0 +1,18 @@
+<%= form_for(@service_inquiry) do |f| %>
+  <%= render :partial => "shared/error_block", :locals => {:object => f} %>
+  <p>
+    <%= f.label :business_type_id %><br />
+    <%= collection_select(:service_inquiry, :business_type_id, BusinessType.all, :id, :business_type) %>
+  </p>
+  <p>
+    <%= f.label :claim_type_id %><br />
+    <%= collection_select(:service_inquiry, :claim_type_id, ClaimType.all, :id, :claim_type)%>
+  </p>
+  <p>
+    <%= f.label :goal_type_id %><br />
+    <%= collection_select(:service_inquiry, :goal_type_id, GoalType.all, :id, :goal_type)%>
+  </p>
+  <p>
+    <%= f.submit 'Find Solution', :class => "big_orange_btn" %>
+  </p>
+<% end %>

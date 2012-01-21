@@ -1,0 +1,78 @@
+<% page_title("Health Care Search ") %>
+
+<% content_for :banner do %>
+  <%= render :partial => 'shared/banners/short_banner', :locals => {:page => "search"} %>
+<% end %>
+
+<% unless @services.empty? %>
+
+<div class="full_row">
+  <h2 class="title title_color">Service Search Results</h2>
+  <%= render :partial => "shared/service_pages/index_list", :locals => {:services => @services} %>
+</div>
+
+<% end %>
+
+
+
+<% unless @articles.empty? %>
+
+<div class="full_row">
+<h2 class="title title_color">Article Search Results</h2>
+  <%= render :partial => "shared/articles/index_article", :locals => {:articles => @articles} %>
+</div>
+<% end %>
+
+<% unless @videos.empty? %>
+<div class="full_row">
+  <h2 class="title title_color">Video Search Results</h2>
+  <%= render :partial => "shared/videos/video_list", :locals => {:videos => @videos} %>
+</div>
+  <% content_for :overlays do %>
+    <div id="video_div" class="overlay">
+        <div id="player"></div>
+    </div>
+  <% end %>
+  <% content_for :javascripts do %>
+    <script type="text/javascript" charset="utf-8">
+      $(document).ready(function() {
+        videos.indexBannerVideos();
+      });
+    </script>
+  <% end %>
+<% end %>
+
+<% unless @documents.empty? %>
+  <div class="full_row">
+    <h2 class="title title_color">Document Search Results</h2>
+    <%= render :partial => "documents/index_document", :locals => {:documents => @documents} %>
+  </div>
+<% end %>
+
+<% unless @events.empty? %>
+  <div class="full_row">
+    <h2 class="title title_color">Event Search Results</h2>
+    <% @events.each do |obj| %>
+      <%= render :partial => "events/index_event", :locals => {:obj => obj} %>
+    <% end %>
+  </div>
+<% end %>
+
+<% if @services.empty? && @articles.empty? && @videos.empty? && @documents.empty? && @events.empty? %>
+  <div class="full_row">
+    <% flash[:notice] = "No results found" %>
+    <h2 class="title_color">No Results Found. Please try again</h2>
+  </div>
+<% end %>
+
+<div class="full_row">
+  <%= link_to "Back", request.env["HTTP_REFERER"], :class => "btn"%>
+</div>
+
+<% content_for :javascripts do %>
+  <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+      app.ctaArrows();
+    });
+  </script>
+<% end %>

@@ -1,0 +1,25 @@
+<% videos.each do |video| %>
+<div class='video_playlist_item index_video_listing top_10_wrap'>
+  <%= link_to image_tag(video.tutorial_video_thumb.url(:thumb), :alt => video.title), video.tutorial_video.url, :class => "index_video_image overlay_link", :rel => "div.overlay" %>
+
+  <h3><%= video.title %></h3>
+  <%= truncate(video.description, :length => 350) %>
+  <div class='widget_links grid_5 omega right'>
+    <%= link_to('Watch Video', video.tutorial_video.url, :class => "overlay_link", :rel => "div.overlay") %>
+    <% if current_user %>
+    |
+    <%= link_to('New', new_video_path) %>
+    |
+    <%= link_to('Edit', edit_video_path(video)) %>
+    |
+    <%= link_to('Delete', video, :confirm => 'Are you sure?', :method => :delete) %>
+    <% end %>
+  </div>
+<div class='clear'></div>
+</div>
+<% end %>
+<% if videos.size > 4 %>
+<div class='index_video_listing top_10_wrap'>
+  <%= will_paginate videos %>
+</div>
+<% end %>
