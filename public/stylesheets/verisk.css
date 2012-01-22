@@ -2354,6 +2354,10 @@ a.button:hover {
   font-weight: 700;
   padding: 10px 0px;
 }
+#service_links .box_button {
+  height: 86px; 
+  width: 184px;
+}
 
 /*.button:before {
 position: absolute;
