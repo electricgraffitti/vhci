@@ -1,3 +1,24 @@
+@font-face {
+  font-family: 'GLight';
+  src: url('../fonts/GothamXNarrow-Light.otf');
+  src: local('☺'), 
+    url('../fonts/GothamXNarrow-Light.eot'),
+    url('../fonts/GothamXNarrow-Light.ttf') format('truetype'), 
+    url('../fonts/GothamXNarrow-Light.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GThin';
+  src: url('../fonts/GothamXNarrow-Thin.otf');
+  src: local('☺'), 
+    url('../fonts/GothamXNarrow-Thin.eot'),
+    url('../fonts/GothamXNarrow-Thin.ttf') format('truetype'), 
+    url('../fonts/GothamXNarrow-Thin.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /*
 HTML5 ✰ Boilerplate
 style.css contains a reset,font normalization and some base styles.
@@ -151,7 +172,7 @@ clip:rect(1px,1px,1px,1px);}
 html, body {
   position: relative;
 	background: #ffffff;
-  font-family: "GothamXNarrow-Light", "Arial", sans-serif;
+  font-family: "GLight", "Arial", sans-serif;
   font-weight:300;
   font-stretch:normal;
   text-rendering: optimizeLegibility;
@@ -223,7 +244,7 @@ header ul li a:hover {
   height:30px;
   position:absolute;
   right:0;
-  width: 103px;
+  width: 123px;
 }
 #top_links {
   position: absolute;
@@ -243,7 +264,7 @@ header ul li a:hover {
 #top_links li.divider {
   border-right: 1px solid #616161;
 }
-header #top_links li a {padding-left: 5px; padding-right:0px;font-size:12px;}
+header #top_links li a {padding-left: 5px; padding-right:0px;font-size: 14px;}
 header #top_links li.divider a {
   padding: 0px 5px;
 }
@@ -268,14 +289,14 @@ header #top_links li.divider a {
 .full_row {
   position: relative;
   float:left;
-  width: 930px;
-  padding: 20px 15px;
+  width: 940px;
+  padding: 20px 0px;
 }
 .secondary_full_row {
   position: relative;
   float:left;
-  width: 930px;
-  padding: 0px 15px;
+  width: 940px;
+  padding: 0px;
 }
 #service_links {
   position: relative;
@@ -305,7 +326,7 @@ header #top_links li.divider a {
   position: relative;
   float: left;
   width: 898px;
-  margin: 15px;
+  margin: 15px 0px;
   padding: 15px;
   border-color: #CDCDCD #CDCDCD #CDCDCD #CDCDCD;
   border-style: solid;
@@ -313,7 +334,7 @@ header #top_links li.divider a {
   background: url(../images/service_pages/gray_box_bg.png) repeat-x scroll 0 0 #DEDEDE;
 }
 .gray_box.thin {
-  width: 928px;
+  width: 938px;
   padding: 0px;
 }
 .gray_box h2 {
@@ -366,7 +387,7 @@ header #top_links li.divider a {
 .combo_header p {
   width: 500px;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 19px;
 }
 .page_description {
   float: left;
@@ -1574,7 +1595,7 @@ a.resource_video_link {
 /*********************************************************************************** ABOUT PAGE ******************/
 .about_us_box_image_wrap {
   border: 1px solid #DEDEDE;
-  margin: 0 0;
+  margin: 0 12px 0px 0px;
   padding: 10px 10px 9px;
 }
 .about_box {
@@ -1598,6 +1619,7 @@ a.resource_video_link {
 }
 .inner_about_box p {
   padding: 0 10px 10px 0;
+  font-family: Helvetica, Arial, sans-serif;
 }
 .bottom_image {
   bottom: 0;
@@ -1607,18 +1629,18 @@ a.resource_video_link {
   width: 113px;
 }
 .bottom_image.box_1 {
-  background: url(../images/hci_sprite.png) -438px -996px no-repeat;
+  background: url(../images/verisk/verisk_icons.png) 37px -100px no-repeat;
 }
 .bottom_image.box_2 {
-  background: url(../images/hci_sprite.png) -30px -1011px no-repeat;
+  background: url(../images/verisk/verisk_icons.png) 52px -305px no-repeat;
 }
 .bottom_image.box_3 {
-  background: url(../images/hci_sprite.png) -224px -996px no-repeat;
+  background: url(../images/verisk/verisk_icons.png) 17px -200px no-repeat;
 }
 .column_2 {
   position: relative;
   float: left;
-  width: 465px;
+  width: 470px;
 }
 .column_2 h2 {
   font-weight: 700;
@@ -1627,11 +1649,13 @@ a.resource_video_link {
   font-size: 12px;
   line-height: 20px;
   padding-right: 20px;
+  font-family: Helvetica, Arial, sans-serif;
 }
 .profile {
   position: relative;
   float: left;
   width: 100%;
+  font-family: Helvetica, Arial, sans-serif;
 }
 .profile img {
   float: left;
@@ -1687,6 +1711,7 @@ a.resource_video_link {
   margin: 5px 0 0 5px;
   padding-left: 10px;
   width: 190px;
+  font-family: Helvetica, Arial, sans-serif;
 }
 .event h4 {
   margin-bottom: 5px;
@@ -1728,6 +1753,7 @@ div.right div.milestone_inner_wrap {
   margin: 5px 5px 0 0;
   padding-left: 10px;
   width: 190px;
+  font-family: Helvetica, Arial, sans-serif;
 }
 .accreditation_links {
   float: left;
@@ -1795,6 +1821,7 @@ div.right div.milestone_inner_wrap {
 .job_board p {
   font-size: 12px;
   line-height: 20px;
+  font-family: Helvetica, Arial, sans-serif;
 }
 .apply_here_link {
   background: url(../images/hci_sprite.png) no-repeat scroll 0 -1125px transparent;
@@ -2124,7 +2151,7 @@ div.odd_row .grid_content_wrap {
 /*********************************************************************************************/
 /*************************************************************** THICK THIN HEADERS  *********/
 h2.thick_thin_header {
-  font-size: 50px;
+  font-size: 38px;
   font-weight: 700;
   letter-spacing: -3px;
   padding: 20px 10px 10px 28px;
@@ -2162,7 +2189,7 @@ h2.thick_thin_header span {
 }
 .quote {
   float: left;
-  font-family: "GothamXNarrow-Light", 'Helvetica', "Arial", sans-serif;
+  font-family: "GLight", 'Helvetica', "Arial", sans-serif;
   font-size: 26px;
   font-weight: 100;
   padding: 0;
@@ -2179,7 +2206,7 @@ h2.thick_thin_header span {
   font-size: 20px;
 }
 .quote b {
-  font-family: "GothamXNarrow-Light", 'Helvetica', "Arial", sans-serif;
+  font-family: "GLight", 'Helvetica', "Arial", sans-serif;
   font-weight: 700;
   font-size: 30px;
 }
@@ -2322,7 +2349,7 @@ footer {
   text-align: left;
   padding: 14px 10px 0px;
   height: 30px;
-  font-family: "GothamXNarrow-Light", Helvetica, Arial, sans-serif;
+  font-family: "GLight", Helvetica, Arial, sans-serif;
 }
 #resource_links .button {
   width: 187px;
@@ -2331,7 +2358,8 @@ footer {
   padding: 11px 10px 0px;
   height: 33px;
 }
-#resource_links .button a {
+#resource_links .button a, #resource_links .button a:visited, #resource_links .button a:hover, #resource_links .button a:active {
+  color: #fff;
   text-decoration: none;
 }
 #resource_links .button.right_side {
@@ -2415,7 +2443,7 @@ border-radius: 7px;
   font-size: 22px;
   color: white;
   text-decoration: none;
-  font-family: "GothamXNarrow-Light", Helvetica, Arial, sans-serif;
+  font-family: "GLight", Helvetica, Arial, sans-serif;
 }
 .box_button.nucleus a {
   background: url(../images/verisk/buttons/nucleus_box_button.png) 23px 15px no-repeat;
