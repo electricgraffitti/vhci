@@ -199,6 +199,10 @@ h4 { font-weight: 500; font-size: 13px; line-height: 18px; }
 #service_mid_section.dci .service_mid_section_image {
   background: transparent url(../images/service_pages/service_mid_bg_sprite.png) left -940px no-repeat;
 }
+.nucleus_green {color:#72bf44;}
+.nucleus_blue {color:#00a1e4;}
+.nucleus_red {color:#ef4223;}
+.nucleus_orange {color:#f99d28;}
 /*************************************************************************************************************************************/
 /******************************************************************************************************* ERRORS **********************/
 #flash{position:absolute;text-align:center;color:#fff;left:38%;padding:2px;top:5px;width:385px;background:#00853f;font-size:175%;z-index:100;display:none;}
@@ -311,8 +315,12 @@ header #top_links li.divider a {
   padding: 0px 20px;
   margin: 20px 0px;
 }
+#nucleus #service_links section {
+  padding: 20px;
+  margin: 0px;
+}
 #service_links section.last {
-  border-left: 1px solid #616161;
+  border-left: 1px solid #c3c4c3;
 }
 #service_links section header {
   font-size: 28px;
@@ -1591,6 +1599,49 @@ a.resource_video_link {
   text-indent: -3333em;
   width: 300px;
 }
+#elements header.main {
+  font-size: 36px;
+  height: 46px;
+}
+#elements header.sub_header {
+  font-size: 28px;
+  height: 46px;
+}
+#elements header.element_header {
+  font-size: 20px;
+  height: 31px;
+  padding-left: 36px;
+  padding-top: 5px;
+}
+#elements header.element_header span {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  display: block;
+  width: 36px;
+  height: 36px;
+  background: url(../images/verisk/verisk_icons.png);
+  background-repeat: no-repeat;
+}
+#elements header.element_header.nucleus_green span {background-position: -124px -13px;}
+#elements header.element_header.nucleus_blue span {background-position: -124px -45px;}
+#elements header.element_header.nucleus_red span {background-position: -157px -12px;}
+#elements header.element_header.nucleus_orange span {background-position: -157px -44px;}
+#element_boxes {
+  width: 100%;
+}
+#element_boxes, #element_boxes li {
+  position: relative;
+  float: left;
+}
+#element_boxes li {
+  width: 225px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+#nucleus_screens {
+  margin-top: 10px;
+}
 /*****************************************************************************************************************/
 /*********************************************************************************** ABOUT PAGE ******************/
 .about_us_box_image_wrap {
@@ -1895,14 +1946,16 @@ div.right div.milestone_inner_wrap {
 /*********************************************************************************** GRID SECTIONS ***************/
 #grid {
   position: relative;
-  width: 960px;
+  width: 940px;
   text-align: center;
   float:left;
+  font-family: Helvetica, Arial, sans-serif;
 }
 #grid .inner_grid {
   background: none repeat scroll 0 0 #CDCDCD;
   margin: 0 auto;
   width: 880px;
+  position: relative;
 }
 #grid .inner_grid .grid_box {
   background: none repeat scroll 0 0 #FFFFFF;
@@ -1963,6 +2016,7 @@ div.even_row .grid_image {
 .grid_content_wrap p {
   font-size: 12px;
   margin-top: 5px;
+  line-height: 18px;
 }
 div.odd_row .grid_content_wrap {
   float: left;

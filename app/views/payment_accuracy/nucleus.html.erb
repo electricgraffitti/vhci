@@ -3,4 +3,108 @@
 	<%= link_to "Get a Demo", more_info_path, :class => "button banner_button" %>
 <% end %>
 
-<%= render :partial => "payment_accuracy/service_links" %> 
+<div id="nucleus">
+	<%# Screenshot / Elements %>
+	<div id="elements" class="full_row">
+		<div class="column_2">
+			<header class='main'>
+				An Atomic Change.
+			</header>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+			<%= image_tag("verisk/nucleus_screens.png", :id => "nucleus_screens") %>
+		</div>
+		<div class="column_2">
+			<header class='sub_header'>
+				[Be] in your element.
+			</header>
+			<ul id="element_boxes">
+				<li>
+					<header class='element_header nucleus_green'><span></span> [Pay] in your element</header>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua.</p>
+				</li>
+				<li>
+					<header class='element_header nucleus_blue'><span></span> [Work] in your element</header>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua.</p>
+				</li>
+				<li>
+					<header class='element_header nucleus_red'><span></span> [Lead] in your element</header>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua.</p>
+				</li>
+				<li>
+					<header class='element_header nucleus_orange'><span></span> [Thrive] in your element</header>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua.</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<%# Grid %>
+	<div id="grid">
+	  <div class="inner_grid">
+	    <div class="grid_box left_side_box odd_row">
+	      <div class="grid_image bene1"></div>
+	      <div class="grid_content_wrap">      
+	        <h3>Free Data Analysis, Free Reports.</h3>
+	        <p>We know we can help you. Sign up for a free 
+	        trial and we’ll let you test-drive the system, 
+	        and quantify just how much you can save.</p>
+	      </div>
+	    </div>
+	    <div class="grid_box right_side_box odd_row">
+	      <div class="grid_image bene2"></div>
+	      <div class="grid_content_wrap">      
+	        <h3>Clinical Validation = Better Results.</h3>
+	        <p>Only HCI provides clinical validation on suspect 
+	        claims by licensed clinicians (RN, MD, DDS, etc.)
+	        You get fewer false positives and better results.</p>
+	      </div>
+	    </div>
+	    <div class="grid_box left_side_box even_row">
+	      <div class="grid_image bene3"></div>
+	      <div class="grid_content_wrap">      
+	        <h3>Prepayment Saves Time, Money.</h3>
+	        <p>Each HCI SaaS solution lives in a prepayment,
+	        post-adjudication environment. Why? Because 
+	        &#8220;pay and chase&#8221; can waste time and money.</p>
+	      </div>
+	    </div>
+	    <div class="grid_box right_side_box even_row">
+	      <div class="grid_image bene4"></div>
+	      <div class="grid_content_wrap">      
+	        <h3>Total Customization, Satisfaction.</h3>
+	        <p>No two payors are the same. Our solutions 
+	        allow you to customize nearly every aspect.  
+	        This gives you greater control and happiness.</p>
+	      </div>
+	    </div>
+	    <div class="grid_box left_side_box odd_row">
+	      <div class="grid_image bene5"></div>
+	      <div class="grid_content_wrap">      
+	        <h3>On-Demand Reports, Information.</h3>
+	        <p>Create and schedule custom or preset reports 
+	        with our On-Demand reporting module. You  
+	        get instant information and instant satisfaction.</p>
+	      </div>
+	    </div>
+	    <div class="grid_box right_side_box odd_row">
+	      <div class="grid_image bene6"></div>
+	      <div class="grid_content_wrap">      
+	        <h3>Dashboards, KPIs Drive Success.</h3>
+	        <p>Our customizable roles-based dashboards 
+	        display KPIs, alerts and more. View savings, 
+	        claims and other critical information real-time.</p>
+	      </div>
+	    </div>
+	    <%= clear %>
+	  </div>
+	</div>
+
+	<%= render :partial => "payment_accuracy/service_links" %> 
+
+</div>
