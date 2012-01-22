@@ -4,21 +4,21 @@
 			Brochures &amp; Resources
 		</header>
 		<ul id="resource_links">
-			<li class="commercial">
+			<li class="commercial button">
 				<span></span>
-				<%= link_to "Commercial MCOs", "#", :class => "button" %> 
+				<%= link_to "Commercial MCOs", "#" %> 
 			</li>
-			<li class="dental"> 
+			<li class="dental button right_side"> 
 				<span></span>
-				<%= link_to "Dental Plans", "#", :class => "button" %> 
+				<%= link_to "Dental Plans", "#" %> 
 			</li>
-			<li class="medicaid"> 
+			<li class="medicaid button"> 
 				<span></span>
-				<%= link_to "Medicaid MCOs", "#", :class => "button" %> 
+				<%= link_to "Medicaid MCOs", "#"%> 
 			</li>
-			<li class="pnc">
+			<li class="pnc button right_side">
 				<span></span>
-				<%= link_to "Property & Casualty", "#", :class => "button" %> 
+				<%= link_to "Property & Casualty", "#" %> 
 			</li>
 		</ul>
 	</section>
@@ -27,8 +27,14 @@
 			The Next Steps
 		</header>
 		<ul id="step_links">
-			<li> <%= link_to "Nucleus Platform", "#", :class => "button box_button" %> </li>
-			<li> <%= link_to "Demo Request", "#", :class => "button box_button" %> </li>
+			<li class="button box_button nucleus">
+				<span>Learn More >>></span>
+				<%= link_to raw("Nucleus <br/> Platform"), "#"%>
+			</li>
+			<li class="button box_button demo">
+				<span>Learn More >>></span>
+				<%= link_to raw("Demo <br/> Request"), "#" %>
+			</li>
 		</ul>
 	</section>
 </div>

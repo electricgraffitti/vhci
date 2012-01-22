@@ -2300,7 +2300,7 @@ footer {
   background: linear-gradient(top,  #3d9dc8 0%,#0079af 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3d9dc8', endColorstr='#0079af',GradientType=0 ); /* IE6-9 */
   color: #fff;
-  text-shadow: 0px 1px 1px rgba(0,0,0,0.6);
+ /* text-shadow: 0px 1px 1px rgba(0,0,0,0.6);*/
   width: 65px;
   height: 35px;
   text-align: center;
@@ -2315,17 +2315,30 @@ footer {
   position: relative;
   float: left;
   margin-right: 10px;
-  width: 180px;
+  width: 187px;
   margin-bottom: 10px;
   font-size: 16px;
   text-decoration: none;
   text-align: left;
   padding: 14px 10px 0px;
   height: 30px;
-  font-family: "GothamXNarrow-Thin", Helvetica, Arial, sans-serif;
+  font-family: "GothamXNarrow-Light", Helvetica, Arial, sans-serif;
+}
+#resource_links .button {
+  width: 187px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  padding: 11px 10px 0px;
+  height: 33px;
+}
+#resource_links .button a {
+  text-decoration: none;
+}
+#resource_links .button.right_side {
+  margin-right: 0px;
 }
 /* f59b36 */
-a.button:hover {
+a.button:hover, li.button:hover {
   color:#fff;
   background: #f59b36; /* Old browsers */
   background: -moz-linear-gradient(top,  #f59b36 0%, #ea770b 100%); /* FF3.6+ */
@@ -2356,7 +2369,8 @@ a.button:hover {
   font-weight: 700;
   padding: 10px 0px;
 }
-.banner_button:active, .banner_button:visited {color:#ffffff;}
+.button.active, .banner_button:active, .button:visited, .banner_button:visited,
+.button.active a, .banner_button a:active, .button a:visited, .banner_button a:visited {color:#ffffff; text-decoration:none;}
 #service_links .box_button {
   height: 86px; 
   width: 182px;
@@ -2378,8 +2392,8 @@ border-radius: 7px;
 }
 #resource_links li span {
   position: absolute; 
-  top: -1px;
-  right: 16px;
+  top: -2px;
+  right: 4px;
   width: 42px;
   height: 43px;
   background-image: url(../images/verisk/verisk_icons.png); background-repeat: no-repeat;
@@ -2390,6 +2404,32 @@ border-radius: 7px;
 #resource_links li.dental span {background-position: -47px 0px}
 #resource_links li.medicaid span {background-position: 0px -44px}
 #resource_links li.pnc span {background-position: 0px 0px}
+.box_button a {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: block;
+  width: 96%;
+  height: 91%;
+  padding: 10px 0px 0px 10px;
+  font-size: 22px;
+  color: white;
+  text-decoration: none;
+  font-family: "GothamXNarrow-Light", Helvetica, Arial, sans-serif;
+}
+.box_button.nucleus a {
+  background: url(../images/verisk/buttons/nucleus_box_button.png) 23px 15px no-repeat;
+}
+.box_button.demo a {
+  background: url(../images/verisk/buttons/demo_box_button.png) 22px 15px no-repeat;
+}
+.box_button span {
+  display: block;
+  bottom: 15px;
+  left: 10px;
+  font-size: 12px;
+  position: absolute;
+}
 /*************************************************************************************************************************************/
 /******************************************************************************************* FORMS ***********************************/
 form.login_form{position:relative;float:left;width:400px;}
