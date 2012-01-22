@@ -2376,6 +2376,20 @@ height: 99.9%;
 -moz-border-radius: 7px;
 border-radius: 7px;
 }
+#resource_links li span {
+  position: absolute; 
+  top: -1px;
+  right: 16px;
+  width: 42px;
+  height: 43px;
+  background-image: url(../images/verisk/verisk_icons.png); background-repeat: no-repeat;
+  display:block;
+  z-index: 2;
+}
+#resource_links li.commercial span {background-position: -47px -43px;}
+#resource_links li.dental span {background-position: -47px 0px}
+#resource_links li.medicaid span {background-position: 0px -44px}
+#resource_links li.pnc span {background-position: 0px 0px}
 /*************************************************************************************************************************************/
 /******************************************************************************************* FORMS ***********************************/
 form.login_form{position:relative;float:left;width:400px;}

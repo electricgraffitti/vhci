@@ -76,26 +76,4 @@
     <div class="stripe_icon dci"></div>
   </div>
 </div>
-
-<div id="service_links">
-	<section>
-		<header>
-			Brochures &amp; Resources
-		</header>
-		<ul id="resource_links">
-			<li class="commercial"> <%= link_to "Commercial MCOs", "#", :class => "button" %> </li>
-			<li class="dental"> <%= link_to "Dental Plans", "#", :class => "button" %> </li>
-			<li class="medicaid"> <%= link_to "Medicaid MCOs", "#", :class => "button" %> </li>
-			<li class="pnc"> <%= link_to "Property & Casualty", "#", :class => "button" %> </li>
-		</ul>
-	</section>
-	<section class="last">
-		<header>
-			The Next Steps
-		</header>
-		<ul id="step_links">
-			<li> <%= link_to "Nucleus Platform", "#", :class => "button box_button" %> </li>
-			<li> <%= link_to "Demo Request", "#", :class => "button box_button" %> </li>
-		</ul>
-	</section>
-</div>
+<%= render :partial => "payment_accuracy/service_links" %> 
