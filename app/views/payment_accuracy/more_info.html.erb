@@ -2,15 +2,58 @@
 	<%= image_tag('verisk/banners/more_info_banner.png') %>
 	<%= link_to "Get a Demo", more_info_path, :class => "button banner_button" %>
 <% end %>
-
-<% content_for :sub_boxes do %>
- 	<header>Do you have a fraud problem? We have your solution?</header>
- 	<%= render :partial => 'shared/sub_boxes/sub_boxes' %>
- 	<div id="full_quote">
-	  <div class="quote blue">
-	    <span class="row_1">"We have experienced positive changes in provider</span>
-	    <span class="row_3">billing habits resulting in significant savings."</span>
-	  </div>
-	  <div class="quote_signature">- Marry Alice Garcia, BA, CPC  Medicaid MCO</div>
+<div id="more_info">
+	<div class="full_row">
+		<div class="column_2">
+			<header class="main">
+				Contact Us.
+			</header>
+			<header class="sub_header nucleus_orange">
+				We want to hear from you.
+			</header>
+			<p>
+			<span class="contact_form_icon"></span>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur.</p>
+		</div>
+		<div class="column_2">
+		  <% form_tag("http://www2.hcinsight.com/l/1492/2009-12-21/G1YG9", :method => "post", :id => "contact_form") do %>
+				<div class="field">
+				  <%= label :contact, :contact_first_name, "First Name *" %><br />
+				  <%= text_field :contact, :contact_first_name, :name => "contact_us_first_name" %>
+				</div>
+				<div class="field">
+				  <%= label :contact, :contact_last_name, "Last Name *" %><br />
+				  <%= text_field :contact, :contact_last_name, :name => "contact_us_last_name" %>
+				</div>
+				<div class="field">
+				  <%= label :contact, :business_name, "Company *" %><br />
+				  <%= text_field :contact, :business_name, :name => "contact_us_business_name" %>
+				</div>
+				<div class="field">
+				  <%= label :contact, :job_title, "Title *" %><br />
+				  <%= text_field :contact, :job_title, :name => "contact_us_job_title" %>
+				</div>
+				<div class="field">
+				  <%= label :contact, :phone, "Phone *" %><br />
+				  <%= text_field :contact, :email, :name => "contact_us_phone" %>
+				</div>
+				<div class="field">
+				  <%= label :contact, :email, "Email Address *" %><br />
+				  <%= text_field :contact, :email, :name => "contact_us_email" %>
+				</div>
+				<div class="field">
+				  <%= label :contact, :comment, "Comments" %><br />
+				  <%= text_area :contact, :comment, :name => "contact_us_comment", :rows => 3, :cols => 28   %>
+				</div>
+				<div class="actions field">
+					<%= submit_tag 'Submit', :class => "button", :title => "Submit Your Message to HealthCare Insight" %>
+				</div>
+			<% end %>
+		</div>
 	</div>
-<% end %>
+</div>
+<%= render :partial => 'shared/sub_boxes/offices_block' %>
