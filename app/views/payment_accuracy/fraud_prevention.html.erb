@@ -2,15 +2,100 @@
 	<%= image_tag('verisk/banners/fraud_prevention_banner.png') %>
 	<%= link_to "Get a Demo", more_info_path, :class => "button banner_button" %>
 <% end %>
+<div id="service_mid_section" class="dci">
+  <div class="service_mid_section_image"></div>
+  <div class="service_mid_section_content">
+    <h2 class="title">
+    	Real-Time Claims Editing Done Right.
+		</h2>
+		<p>
+		 DentalClaim Insight<sup>&reg;</sup> is a prepayment fraud, abuse and overpayment prevention service. It’s designed to help you optimize claims payment accuracy, pinpoint fraudulent providers and decrease dental claims costs. By combining our advanced Code Validator Pro<sup>&reg;</sup> (rules-based) and Fraud Finder Pro<sup>&reg;</sup> (profiling) applications, you get better technology. By relying on our experienced Dental Coding Specialists, Certified Dental Consultants and investigators, you get better results.  
+		</p>
+		<div id="small_quote">
+		  <div class="quote blue">
+		    <span class="row_1">“Verisk Health clients have access to the most</span>
+		    <span class="row_2"> advanved, comprehensive code editing and</span>
+		    <span class="row_3">profiling application available.”</span>
+		  </div>
+  		<div class="quote_signature">- Dr, Jeff Davee, Verisk Health</div>
+		</div>
+  </div>
+</div>
 
-<% content_for :sub_boxes do %>
- 	<header>Do you have a fraud problem? We have your solution?</header>
- 	<%= render :partial => 'shared/sub_boxes/sub_boxes' %>
- 	<div id="full_quote">
-	  <div class="quote blue">
-	    <span class="row_1">"We have experienced positive changes in provider</span>
-	    <span class="row_3">billing habits resulting in significant savings."</span>
-	  </div>
-	  <div class="quote_signature">- Marry Alice Garcia, BA, CPC  Medicaid MCO</div>
+<div id="problem_solution_boxes">
+  <div class="pro_sol_boxes problem_box">
+  	<h2 class="thick_thin_header"><span>THE</span> Problem</h2>
+  	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+  	<div class="graph_box dci_graph"></div>
 	</div>
-<% end %>
+
+	<div class="pro_sol_boxes solution_box dci_sol_box_bg">
+	  <h2 class="thick_thin_header"><span>THE</span> Solution</h2>
+	  <div class="solution_grid">
+			<div class="solution_bene left">
+			  <h3><b>Pay Right. Save Money</b></h3>
+			  <p>Reduce expenditures up to $1 PMPM. Increase profits and payment accuracy.</p>
+			</div>
+			<div class="solution_bene left">
+			  <h3><b>Get a Dentist. Get Results.</b></h3>
+			  <p>Our clinical validation process delivers less false positives and better results.</p>
+			</div>
+			<div class="solution_bene left">
+			  <h3><b>Save Time. Go Prepayment.</b></h3>
+			  <p>Avoid &#8220;pay and chase&#8221; detection with prepayment analysis on 100% of claims.</p>
+			</div>
+			<div class="solution_bene left">
+			  <h3><b>Smart Models. Smarter Software.</b></h3>
+			  <p>Get access to the most advanced fraud models and SaaS applications available.</p>
+			</div>
+			<div class="solution_bene left">
+			  <h3><b>Better Support. Better Service.</b></h3>
+			  <p>Get help and appeals support from CDT coding specialists and licensed dentists.</p>
+			</div>
+			<div class="solution_bene left">
+			  <h3><b>Total Customization. Totally You.</b></h3>
+			  <p>No two payors are alike. Customize your fraud solution down to the last bit and byte.</p>
+			</div>
+			<div class="solution_bene left">
+			  <h3><b>Real Fast, Real-Time Processing.</b></h3>
+			  <p>You don’t have time to hold up processing. Get real-time protection with real results.</p>
+			</div>
+			<div class="solution_bene left">
+			  <h3><b>Fraud and Editing. All in One.</b></h3>
+			  <p>Unilke others, we bundle supplemental editing and fraud prevention in one solution.</p>
+			</div>
+	    <%= clear %>
+	  </div>
+	</div>	
+
+
+  <div class="top_stripe dci_light_bg "></div>
+  <div class="bottom_stripe dci_dark_bg ">
+    <div class="stripe_icon dci"></div>
+  </div>
+</div>
+
+<div id="service_links">
+	<section>
+		<header>
+			Brochures &amp; Resources
+		</header>
+		<ul id="resource_links">
+			<li class="commercial"> <%= link_to "Commercial MCOs", "#", :class => "button" %> </li>
+			<li class="dental"> <%= link_to "Dental Plans", "#", :class => "button" %> </li>
+			<li class="medicaid"> <%= link_to "Medicaid MCOs", "#", :class => "button" %> </li>
+			<li class="pnc"> <%= link_to "Property & Casualty", "#", :class => "button" %> </li>
+		</ul>
+	</section>
+	<section class="last">
+		<header>
+			The Next Steps
+		</header>
+		<ul id="step_links">
+			<li> <%= link_to "Nucleus Platform", "#", :class => "button box_button" %> </li>
+			<li> <%= link_to "Demo Request", "#", :class => "button box_button" %> </li>
+		</ul>
+	</section>
+</div>

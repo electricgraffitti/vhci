@@ -90,10 +90,10 @@ var app = {
     var url = location.pathname;
     var current_link = $('#main_nav ul li a[href$="' + url + '"]');
     if (url == "/") {
-       current_link.removeClass('active');
-       $('.home').addClass('active');
+       current_link.parent().removeClass('active');
+       $('#home').parent().addClass('active');
      } else {
-     current_link.addClass('active');
+     current_link.parent().addClass('active');
      }
   },
   

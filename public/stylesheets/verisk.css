@@ -2308,6 +2308,7 @@ footer {
   -webkit-border-radius: 7px;
   -moz-border-radius: 7px;
   border-radius: 7px;
+  border: 1px solid #3d9dc8;
 }
 #service_links .button {
   position: relative;
@@ -2356,23 +2357,23 @@ a.button:hover {
 }
 #service_links .box_button {
   height: 86px; 
-  width: 184px;
+  width: 182px;
 }
 
-/*.button:before {
+.button:before {
 position: absolute;
 display: block;
 top: 0px;
 left: 0px;
-border-left: 1px solid rgba(255,255,255,0.6);
-border-top: 1px solid rgba(255,255,255,0.8);
+border-left: 1px solid rgba(255,255,255,0.2);
+border-top: 1px solid rgba(255,255,255,0.3);
 content: '';
 width: 99.9%;
 height: 99.9%;
--webkit-border-radius: 10px;
--moz-border-radius: 10px;
-border-radius: 10px;
-}*/
+-webkit-border-radius: 7px;
+-moz-border-radius: 7px;
+border-radius: 7px;
+}
 /*************************************************************************************************************************************/
 /******************************************************************************************* FORMS ***********************************/
 form.login_form{position:relative;float:left;width:400px;}
