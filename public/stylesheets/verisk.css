@@ -65,7 +65,8 @@ html{overflow-y:scroll;}
 .title {font-weight: 700;}
 /* Accessible focus treatment:people.opera.com/patrickl/experiments/keyboard/test */
 a:hover,a:active{outline:none;}
-a,a:active,a:visited{color:#616161;}
+a {color: #616161;}
+a:active,a:visited{color:#616161;}
 a:hover{color:#0088cc;}
 ol{margin-left:1.8em;}
 ol{list-style-type:decimal;}
@@ -2334,7 +2335,7 @@ a.button:hover {
   background: -ms-linear-gradient(top,  #f59b36 0%,#ea770b 100%); /* IE10+ */
   background: linear-gradient(top,  #f59b36 0%,#ea770b 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f59b36', endColorstr='#ea770b',GradientType=0 ); /* IE6-9 */
-
+  border: 1px solid #ea770b;
 }
 .banner_button {
   position: absolute;
@@ -2355,6 +2356,7 @@ a.button:hover {
   font-weight: 700;
   padding: 10px 0px;
 }
+.banner_button:active, .banner_button:visited {color:#ffffff;}
 #service_links .box_button {
   height: 86px; 
   width: 182px;
